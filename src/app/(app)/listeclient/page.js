@@ -94,11 +94,10 @@ import "@/public/assets-admin/vendor/quill/quill.bubble.css"
 import "@/public/assets-admin/vendor/remixicon/remixicon.css"
 import "@/public/assets-admin/vendor/simple-datatables/style.css"
 import "@/public/assets-admin/css/style.css"
-import $ from 'jquery'
-import 'datatables.net-bs5'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { useRouter } from 'next/navigation'
 import axios from '@/lib/axios'
+import { useTable } from 'react-table'
 
 const Dashboard = () => {
     const [clientsValides, setClientsValides] = useState([])
@@ -110,7 +109,6 @@ const Dashboard = () => {
         axios.get('/api/clients/valides')
             .then(response => {
                 setClientsValides(response.data)
-                $('.datatable-valides').DataTable()
             })
             .catch(error => {
                 console.error('Erreur lors de la récupération des clients valides:', error)
@@ -120,7 +118,6 @@ const Dashboard = () => {
         axios.get('/api/clients/invalides')
             .then(response => {
                 setClientsInvalides(response.data)
-                $('.datatable-invalides').DataTable()
             })
             .catch(error => {
                 console.error('Erreur lors de la récupération des clients invalides:', error)
@@ -164,6 +161,75 @@ const Dashboard = () => {
         router.push(`/user-info?clientId=${clientId}`)
     }
 
+    // Configuration des colonnes pour les clients valides
+    const columnsValides = useMemo(
+        () => [
+            {
+                Header: '#',
+                accessor: 'id',
+            },
+            {
+                Header: 'email',
+                accessor: 'email',
+            },
+            {
+                Header: 'Nom',
+                accessor: 'name',
+            },
+            {
+                Header: 'Prénom',
+                accessor: 'prenom',
+            },
+            {
+                Header: 'Numéro',
+                accessor: 'tel',
+            },
+        ],
+        []
+    )
+
+    // Configuration des colonnes pour les clients invalides
+    const columnsInvalides = useMemo(
+        () => [
+            {
+                Header: '#',
+                accessor: 'id',
+            },
+            {
+                Header: 'email',
+                accessor: 'email',
+            },
+            {
+                Header: 'Nom',
+                accessor: 'name',
+            },
+            {
+                Header: 'Prénom',
+                accessor: 'prenom',
+            },
+            {
+                Header: 'Numéro',
+                accessor: 'tel',
+            },
+            {
+                Header: 'Actions',
+                accessor: 'actions',
+                Cell: ({ row }) => (
+                    <button
+                        onClick={(event) => handleActivation(event, row.original.id)}
+                        className="badge bg-success"
+                    >
+                        Activer
+                    </button>
+                ),
+            },
+        ],
+        []
+    )
+
+    const { getTableProps: getTablePropsValides, getTableBodyProps: getTableBodyPropsValides, headerGroups: headerGroupsValides, rows: rowsValides, prepareRow: prepareRowValides } = useTable({ columns: columnsValides, data: clientsValides })
+    const { getTableProps: getTablePropsInvalides, getTableBodyProps: getTableBodyPropsInvalides, headerGroups: headerGroupsInvalides, rows: rowsInvalides, prepareRow: prepareRowInvalides } = useTable({ columns: columnsInvalides, data: clientsInvalides })
+
     return (
         <>
             <Header title="Dashboard" />
@@ -174,26 +240,27 @@ const Dashboard = () => {
                             <div className="card overflow-auto">
                                 <div className="card-body">
                                     <h5 className="card-title">Liste des clients valides</h5>
-                                    <table className="table datatable-valides">
+                                    <table {...getTablePropsValides()} className="table">
                                         <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">email</th>
-                                                <th scope="col">Nom</th>
-                                                <th scope="col">Prénom</th>
-                                                <th scope="col">Numéro</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {clientsValides.map(client => (
-                                                <tr key={client.id} onClick={() => handleClientClick(client.id)} style={{ cursor: 'pointer' }}>
-                                                    <th scope="row">{client.id}</th>
-                                                    <td>{client.email}</td>
-                                                    <td>{client.name}</td>
-                                                    <td>{client.prenom}</td>
-                                                    <td>{client.tel}</td>
+                                            {headerGroupsValides.map(headerGroup => (
+                                                <tr {...headerGroup.getHeaderGroupProps()}>
+                                                    {headerGroup.headers.map(column => (
+                                                        <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                                                    ))}
                                                 </tr>
                                             ))}
+                                        </thead>
+                                        <tbody {...getTableBodyPropsValides()}>
+                                            {rowsValides.map(row => {
+                                                prepareRowValides(row)
+                                                return (
+                                                    <tr {...row.getRowProps()} onClick={() => handleClientClick(row.original.id)} style={{ cursor: 'pointer' }}>
+                                                        {row.cells.map(cell => (
+                                                            <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                                                        ))}
+                                                    </tr>
+                                                )
+                                            })}
                                         </tbody>
                                     </table>
                                 </div>
@@ -204,35 +271,27 @@ const Dashboard = () => {
                             <div className="card overflow-auto">
                                 <div className="card-body">
                                     <h5 className="card-title">Liste des clients non valides</h5>
-                                    <table className="table datatable-invalides">
+                                    <table {...getTablePropsInvalides()} className="table">
                                         <thead>
-                                            <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">email</th>
-                                                <th scope="col">Nom</th>
-                                                <th scope="col">Prénom</th>
-                                                <th scope="col">Numéro</th>
-                                                <th scope="col">Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {clientsInvalides.map(client => (
-                                                <tr key={client.id}>
-                                                    <th scope="row">{client.id}</th>
-                                                    <td>{client.email}</td>
-                                                    <td>{client.name}</td>
-                                                    <td>{client.prenom}</td>
-                                                    <td>{client.tel}</td>
-                                                    <td>
-                                                        <button
-                                                            onClick={(event) => handleActivation(event, client.id)}
-                                                            className="badge bg-success"
-                                                        >
-                                                            Activer
-                                                        </button>
-                                                    </td>
+                                            {headerGroupsInvalides.map(headerGroup => (
+                                                <tr {...headerGroup.getHeaderGroupProps()}>
+                                                    {headerGroup.headers.map(column => (
+                                                        <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                                                    ))}
                                                 </tr>
                                             ))}
+                                        </thead>
+                                        <tbody {...getTableBodyPropsInvalides()}>
+                                            {rowsInvalides.map(row => {
+                                                prepareRowInvalides(row)
+                                                return (
+                                                    <tr {...row.getRowProps()}>
+                                                        {row.cells.map(cell => (
+                                                            <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                                                        ))}
+                                                    </tr>
+                                                )
+                                            })}
                                         </tbody>
                                     </table>
                                 </div>
@@ -246,5 +305,4 @@ const Dashboard = () => {
 }
 
 export default Dashboard
-
 

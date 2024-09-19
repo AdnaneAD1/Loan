@@ -1,31 +1,6 @@
-// import Header from '@/app/(app)/Header'
-// import '@/app/global.css'
-
-// export const metadata = {
-//     title: 'Laravel - Dashboard',
-// }
-
-// const Dashboard = () => {
-//     return (
-//         <>
-//             <Header title="Dashboard" />
-//             <div className="py-12">
-//                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-//                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-//                         <div className="p-6 bg-white border-b border-gray-200">
-//                             You are logged in!
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </>
-//     )
-// }
-
-// export default Dashboard
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import axios from '@/lib/axios'
 import Header from '@/app/(app)/Header'
 import '@/app/global.css'
@@ -37,12 +12,7 @@ import "@/public/assets-admin/vendor/quill/quill.bubble.css"
 import "@/public/assets-admin/vendor/remixicon/remixicon.css"
 import "@/public/assets-admin/vendor/simple-datatables/style.css"
 import "@/public/assets-admin/css/style.css"
-import $ from 'jquery'
-import 'datatables.net-bs5'
-
-// export const metadata = {
-//     title: 'Laravel - Dashboard',
-// }
+import { useTable } from 'react-table'
 
 const Dashboard = () => {
     const [data, setData] = useState({
@@ -54,14 +24,12 @@ const Dashboard = () => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
 
+    // Chargement des données depuis l'API
     useEffect(() => {
         axios.get('/api/dashboard-data')
             .then(response => {
                 setData(response.data)
                 setLoading(false)
-                setTimeout(() => {
-                    $('#demandesTable').DataTable()
-                }, 100)
             })
             .catch(error => {
                 setError(error.response ? error.response.data.error : 'Une erreur est survenue')
@@ -69,6 +37,64 @@ const Dashboard = () => {
             })
     }, [])
 
+    // Configuration des colonnes pour React Table
+    const columns = useMemo(
+        () => [
+            {
+                Header: '#',
+                accessor: 'id', // Clé pour accéder à la donnée
+            },
+            {
+                Header: 'Client',
+                accessor: row => `${row.client.nom} ${row.client.prenom}`, // Combiner nom et prénom
+            },
+            {
+                Header: 'E-mail Client',
+                accessor: 'client.email',
+            },
+            {
+                Header: 'Projet',
+                accessor: 'projet',
+            },
+            {
+                Header: 'Montant',
+                accessor: 'montant_voulu',
+                Cell: ({ value }) => `$${value}`, // Formatage du montant
+            },
+            {
+                Header: 'Reste',
+                accessor: 'montant_restant',
+                Cell: ({ value }) => `$${value < 0 ? 0 : value}`, // Gestion du reste
+            },
+            {
+                Header: 'Statut',
+                accessor: 'statut',
+                Cell: ({ value }) => (
+                    <span className={`badge bg-${value === 'valide' || value === 'paid' ? 'success' : (value === 'pending' ? 'warning' : 'danger')}`}>
+                        {value}
+                    </span>
+                ),
+            },
+            {
+                Header: 'Description',
+                accessor: 'description',
+                Cell: ({ value }) => <div className="scrolling-text">{value}</div>, // Texte défilant pour description
+            },
+        ],
+        []
+    )
+
+    const tableInstance = useTable({ columns, data: data.demandes })
+
+    const {
+        getTableProps,
+        getTableBodyProps,
+        headerGroups,
+        rows,
+        prepareRow,
+    } = tableInstance
+
+    // Gestion des états de chargement et d'erreur
     if (loading) {
         return <div>Chargement...</div>
     }
@@ -80,15 +106,6 @@ const Dashboard = () => {
     return (
         <>
             <Header title="Dashboard" />
-            {/* <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 bg-white border-b border-gray-200">
-                            Vous êtes connecté !
-                        </div>
-                    </div>
-                </div>
-            </div> */}
             <main id="main" className="main">
                 <div className="pagetitle">
                     <h1>Dashboard</h1>
@@ -99,10 +116,12 @@ const Dashboard = () => {
                         </ol>
                     </nav>
                 </div>
+
                 <section className="section dashboard">
                     <div className="row">
                         <div className="col-lg-8">
                             <div className="row">
+                                {/* Statistiques principales */}
                                 <div className="col-xxl-4 col-md-6">
                                     <div className="card info-card sales-card">
                                         <div className="card-body">
@@ -120,6 +139,7 @@ const Dashboard = () => {
                                         </div>
                                     </div>
                                 </div>
+
                                 <div className="col-xxl-4 col-md-6">
                                     <div className="card info-card revenue-card">
                                         <div className="card-body">
@@ -137,6 +157,7 @@ const Dashboard = () => {
                                         </div>
                                     </div>
                                 </div>
+
                                 <div className="col-xxl-4 col-xl-12">
                                     <div className="card info-card customers-card">
                                         <div className="card-body">
@@ -154,47 +175,39 @@ const Dashboard = () => {
                                         </div>
                                     </div>
                                 </div>
+
+                                {/* Tableau des demandes */}
                                 <div className="col-12">
                                     <div className="card recent-sales overflow-auto">
                                         <div className="card-body">
                                             <h5 className="card-title">Bilan <span>| Demandes</span></h5>
-                                            <table id="demandesTable" className="table table-borderless datatable">
+                                            <table {...getTableProps()} className="table table-borderless">
                                                 <thead>
-                                                    <tr>
-                                                        <th scope="col">#</th>
-                                                        <th scope="col">Client</th>
-                                                        <th scope="col">E-mail Client</th>
-                                                        <th scope="col">Projet</th>
-                                                        {/* <th scope="col">RIB</th> */}
-                                                        <th scope="col">Montant</th>
-                                                        <th scope="col">Reste</th>
-                                                        <th scope="col">Statut</th>
-                                                        <th scope="col">Description</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    {data.demandes.map(demande => (
-                                                        <tr key={demande.id}>
-                                                            <th scope="row"><a href="#">{demande.id}</a></th>
-                                                            <td>{demande.client.nom} {demande.client.prenom}</td>
-                                                            <td>{demande.client.email}</td>
-                                                            <td className="">{demande.projet}</td>
-                                                            {/* <td>{demande.client.rib}</td> */}
-                                                            <td>${demande.montant_voulu}</td>
-                                                            <td>${demande.montant_restant < 0 ? 0 : demande.montant_restant}</td>
-                                                            <td>
-                                                                <span className={`badge bg-${demande.statut === 'valide' || demande.statut === 'paid' ? 'success' : (demande.statut === 'pending' ? 'warning' : 'danger')}`}>
-                                                                    {demande.statut}
-                                                                </span>
-                                                            </td>
-                                                            <td className="scrolling-text">{demande.description}</td>
+                                                    {headerGroups.map(headerGroup => (
+                                                        <tr {...headerGroup.getHeaderGroupProps()}>
+                                                            {headerGroup.headers.map(column => (
+                                                                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                                                            ))}
                                                         </tr>
                                                     ))}
+                                                </thead>
+                                                <tbody {...getTableBodyProps()}>
+                                                    {rows.map(row => {
+                                                        prepareRow(row)
+                                                        return (
+                                                            <tr {...row.getRowProps()}>
+                                                                {row.cells.map(cell => (
+                                                                    <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                                                                ))}
+                                                            </tr>
+                                                        )
+                                                    })}
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
