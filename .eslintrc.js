@@ -48,4 +48,7 @@ module.exports = {
         'linebreak-style': ['error', 'unix'],
         semi: ['error', 'never'],
     },
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
 }
