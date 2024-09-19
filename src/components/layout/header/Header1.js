@@ -29,7 +29,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isSide
                         </nav>
                         <div className="menu-right-content ml_70">
                             <Link href="/login" className="theme-btn btn-two mr_20">Connectez-vous</Link>
-                            <Link href="/contact" className="theme-btn btn-one">Ouvrez votre compte</Link>
+                            <Link href="/register" className="theme-btn btn-one">Ouvrez votre compte</Link>
                         </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isSide
                             </nav>
                             <div className="menu-right-content ml_70">
                             <Link href="/login" className="theme-btn btn-two mr_20">Connectez-vous</Link>
-                            <Link href="/contact" className="theme-btn btn-one">Ouvrez un compte</Link>
+                            <Link href="/register" className="theme-btn btn-one">Ouvrez un compte</Link>
                             </div>
                         </div>
                         </div>
