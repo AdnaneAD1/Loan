@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",  // Définit la racine du projet comme base
+    "paths": {
+      "@/*": ["src/*"],  // Alias pour les fichiers dans 'src'
+      "node_modules/*": ["node_modules/*"],  // Assurez-vous que 'node_modules' est accessible
+      "next/*": ["next/*"]
+    }
+    }
+  }
