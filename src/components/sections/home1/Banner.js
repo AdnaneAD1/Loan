@@ -110,9 +110,9 @@ export default function Banner() {
                                 </p>
                                 <div className="btn-box">
                                     <Link
-                                        href="/"
+                                        href="/demande"
                                         className="theme-btn btn-one">
-                                        Prendre un Rendez-vous
+                                        Faire une demande de prêt
                                     </Link>
                                 </div>
                             </div>
@@ -153,9 +153,9 @@ export default function Banner() {
                                 </p>
                                 <div className="btn-box">
                                     <Link
-                                        href="/"
+                                        href="/demande"
                                         className="theme-btn btn-one">
-                                        Prendre un Rendez-vous
+                                        Faire une demande de prêt
                                     </Link>
                                 </div>
                             </div>
