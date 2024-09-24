@@ -55,8 +55,6 @@ const ClientDetails = () => {
                             <p><strong>Pays:</strong> {client.pays}</p>
                             <p><strong>Numéro d'Identité:</strong> {client.numero_identite}</p>
                             <p><strong>Numero Securite Sociale:</strong> {client.numero_securite_sociale}</p>
-                            <img src={client.preuve_residence}></img>
-                            <img src={client.scan_identite}></img>
                             <p><strong>Source de revenu:</strong> {client.source_revenu}</p>
                             <p><strong>Statut Emploi:</strong> {client.statut_emploi}</p>
                             <p><strong>Information Bancaires:</strong> {client.informations_bancaires}</p>

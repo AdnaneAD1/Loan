@@ -32,8 +32,8 @@ const ClientRegister = () => {
     const [pays, setPays] = useState('')
     const [numeroIdentite, setNumeroIdentite] = useState('')
     const [numeroSecuriteSociale, setNumeroSecuriteSociale] = useState('')
-    const [preuveResidence, setPreuveResidence] = useState('')
-    const [scanIdentite, setScanIdentite] = useState('')
+    // const [preuveResidence, setPreuveResidence] = useState('')
+    // const [scanIdentite, setScanIdentite] = useState('')
     const [sourceRevenu, setSourceRevenu] = useState('')
     const [statutEmploi, setStatutEmploi] = useState('')
     const [informationsBancaires, setInformationsBancaires] = useState('')
@@ -59,8 +59,8 @@ const ClientRegister = () => {
             pays,
             numero_identite: numeroIdentite,
             numero_securite_sociale: numeroSecuriteSociale,
-            preuve_residence: preuveResidence,
-            scan_identite: scanIdentite,
+            // preuve_residence: preuveResidence,
+            // scan_identite: scanIdentite,
             source_revenu: sourceRevenu,
             statut_emploi: statutEmploi,
             informations_bancaires: informationsBancaires,
@@ -74,7 +74,7 @@ const ClientRegister = () => {
         <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Register">
             <div className="min-h-screen bg-gray-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-sm w-full space-y-8">
-                    <form onSubmit={submitForm} className="mt-12 space-y-6 mb-12">
+                    <form onSubmit={submitForm} className="mt-12 space-y-6 mb-12" enctype="multipart/form-data">
                         <div className="rounded-md shadow-sm -space-y-px">
                             {/* Existing fields */}
                             {/* Name */}
@@ -287,7 +287,7 @@ const ClientRegister = () => {
                                 <InputError messages={errors.numero_securite_sociale} className="mt-2" />
                             </div>
 
-                            {/* Preuve de Résidence */}
+                            {/* Preuve de Résidence
                             <div className="mt-4">
                                 <Label htmlFor="preuveResidence">Preuve de Résidence (max 2mo)</Label>
                                 <Input
@@ -299,7 +299,7 @@ const ClientRegister = () => {
                                 <InputError messages={errors.preuve_residence} className="mt-2" />
                             </div>
 
-                            {/* Scan Identité */}
+                            //  Scan Identité
                             <div className="mt-4">
                                 <Label htmlFor="scanIdentite">Scan Identité (max 2mo)</Label>
                                 <Input
@@ -309,7 +309,7 @@ const ClientRegister = () => {
                                     required
                                 />
                                 <InputError messages={errors.scan_identite} className="mt-2" />
-                            </div>
+                            </div> */}
 
                             {/* Source de Revenu */}
                             <div className="mt-4">

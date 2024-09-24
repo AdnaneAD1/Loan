@@ -17,9 +17,13 @@ import { useTable } from 'react-table'
 const Dashboard = () => {
     const [data, setData] = useState({
         demandes: [],
+        demandesPublics: [], // Ajout des demandes publiques
         demandeCount: 0,
         demandeApprouveCount: 0,
         montantTotal: 0,
+        demandePublicCount: 0,
+        montantTotalPublic: 0,
+        demandePublicApprouveCount: 0,
     })
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
@@ -37,62 +41,62 @@ const Dashboard = () => {
             })
     }, [])
 
-    // Configuration des colonnes pour React Table
-    const columns = useMemo(
+    // Configuration des colonnes pour les demandes clients
+    const columnsDemandes = useMemo(
         () => [
-            {
-                Header: '#',
-                accessor: 'id', // Clé pour accéder à la donnée
-            },
-            {
-                Header: 'Client',
-                accessor: row => `${row.client.nom} ${row.client.prenom}`, // Combiner nom et prénom
-            },
-            {
-                Header: 'E-mail Client',
-                accessor: 'client.email',
-            },
-            {
-                Header: 'Projet',
-                accessor: 'projet',
-            },
-            {
-                Header: 'Montant',
-                accessor: 'montant_voulu',
-                Cell: ({ value }) => `$${value}`, // Formatage du montant
-            },
-            {
-                Header: 'Reste',
-                accessor: 'montant_restant',
-                Cell: ({ value }) => `$${value < 0 ? 0 : value}`, // Gestion du reste
-            },
-            {
-                Header: 'Statut',
-                accessor: 'statut',
-                Cell: ({ value }) => (
-                    <span className={`badge bg-${value === 'valide' || value === 'paid' ? 'success' : (value === 'pending' ? 'warning' : 'danger')}`}>
-                        {value}
-                    </span>
-                ),
-            },
-            {
-                Header: 'Description',
-                accessor: 'description',
-                Cell: ({ value }) => <div className="scrolling-text">{value}</div>, // Texte défilant pour description
-            },
+            { Header: '#', accessor: 'id' },
+            { Header: 'Client', accessor: row => `${row.client.nom} ${row.client.prenom}` },
+            { Header: 'E-mail Client', accessor: 'client.email' },
+            { Header: 'Projet', accessor: 'projet' },
+            { Header: 'Montant', accessor: 'montant_voulu', Cell: ({ value }) => `$${value}` },
+            { Header: 'Reste', accessor: 'montant_restant', Cell: ({ value }) => `$${value < 0 ? 0 : value}` },
+            { Header: 'Statut', accessor: 'statut', Cell: ({ value }) => (
+                <span className={`badge bg-${value === 'valide' || value === 'paid' ? 'success' : (value === 'pending' ? 'warning' : 'danger')}`}>
+                    {value}
+                </span>
+            ) },
+            { Header: 'Description', accessor: 'description', Cell: ({ value }) => <div className="scrolling-text">{value}</div> }
         ],
         []
     )
 
-    const tableInstance = useTable({ columns, data: data.demandes })
+    // Configuration des colonnes pour les demandes publiques
+    const columnsDemandesPublics = useMemo(
+        () => [
+            { Header: '#', accessor: 'id' },
+            { Header: 'E-mail', accessor: 'email' },
+            { Header: 'Projet', accessor: 'projet' },
+            { Header: 'Montant Voulu', accessor: 'montant_voulu', Cell: ({ value }) => `$${value}` },
+            { Header: 'Montant Restant', accessor: 'montant_restant', Cell: ({ value }) => `$${value < 0 ? 0 : value}` },
+            { Header: 'Statut', accessor: 'statut', Cell: ({ value }) => (
+                <span className={`badge bg-${value === 'valide' || value === 'paid' ? 'success' : (value === 'pending' ? 'warning' : 'danger')}`}>
+                    {value}
+                </span>
+            ) },
+            { Header: 'Description', accessor: 'description', Cell: ({ value }) => <div className="scrolling-text">{value}</div> }
+        ],
+        []
+    )
+
+    // Utilisation de React Table pour les deux tableaux
+    const tableInstanceDemandes = useTable({ columns: columnsDemandes, data: data.demandes })
+    const tableInstanceDemandesPublics = useTable({ columns: columnsDemandesPublics, data: data.demandesPublics })
 
     const {
-        getTableProps,
-        getTableBodyProps,
-        headerGroups,
-        rows,
-        prepareRow,
-    } = tableInstance
+        getTableProps: getTablePropsDemandes,
+        getTableBodyProps: getTableBodyPropsDemandes,
+        headerGroups: headerGroupsDemandes,
+        rows: rowsDemandes,
+        prepareRow: prepareRowDemandes,
+    } = tableInstanceDemandes
+
+    const {
+        getTableProps: getTablePropsDemandesPublics,
+        getTableBodyProps: getTableBodyPropsDemandesPublics,
+        headerGroups: headerGroupsDemandesPublics,
+        rows: rowsDemandesPublics,
+        prepareRow: prepareRowDemandesPublics,
+    } = tableInstanceDemandesPublics
 
     // Gestion des états de chargement et d'erreur
     if (loading) {
@@ -119,7 +123,7 @@ const Dashboard = () => {
 
                 <section className="section dashboard">
                     <div className="row">
-                        <div className="col-lg-8">
+                        <div className="col-lg-12">
                             <div className="row">
                                 {/* Statistiques principales */}
                                 <div className="col-xxl-4 col-md-6">
@@ -131,9 +135,7 @@ const Dashboard = () => {
                                                     <i className="bi bi-journal-bookmark-fill"></i>
                                                 </div>
                                                 <div className="ps-3">
-                                                    <h6>{data.demandeCount}</h6>
-                                                    <span className="text-success small pt-1 fw-bold">12%</span>
-                                                    <span className="text-muted small pt-2 ps-1">augmentation</span>
+                                                    <h6>{data.totalDemandesCount}</h6>
                                                 </div>
                                             </div>
                                         </div>
@@ -150,8 +152,6 @@ const Dashboard = () => {
                                                 </div>
                                                 <div className="ps-3">
                                                     <h6>${data.montantTotal}</h6>
-                                                    <span className="text-success small pt-1 fw-bold">8%</span>
-                                                    <span className="text-muted small pt-2 ps-1">augmentation</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -167,23 +167,21 @@ const Dashboard = () => {
                                                     <i className="bi bi-building-check"></i>
                                                 </div>
                                                 <div className="ps-3">
-                                                    <h6>{data.demandeApprouveCount}</h6>
-                                                    <span className="text-danger small pt-1 fw-bold">12%</span>
-                                                    <span className="text-muted small pt-2 ps-1">diminution</span>
+                                                    <h6>{data.totalApprouveCount}</h6>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                {/* Tableau des demandes */}
+                                {/* Tableau des demandes clients */}
                                 <div className="col-12">
                                     <div className="card recent-sales overflow-auto">
                                         <div className="card-body">
                                             <h5 className="card-title">Bilan <span>| Demandes</span></h5>
-                                            <table {...getTableProps()} className="table table-borderless">
+                                            <table {...getTablePropsDemandes()} className="table table-borderless">
                                                 <thead>
-                                                    {headerGroups.map(headerGroup => (
+                                                    {headerGroupsDemandes.map(headerGroup => (
                                                         <tr {...headerGroup.getHeaderGroupProps()}>
                                                             {headerGroup.headers.map(column => (
                                                                 <th {...column.getHeaderProps()}>{column.render('Header')}</th>
@@ -191,9 +189,41 @@ const Dashboard = () => {
                                                         </tr>
                                                     ))}
                                                 </thead>
-                                                <tbody {...getTableBodyProps()}>
-                                                    {rows.map(row => {
-                                                        prepareRow(row)
+                                                <tbody {...getTableBodyPropsDemandes()}>
+                                                    {rowsDemandes.map(row => {
+                                                        prepareRowDemandes(row)
+                                                        return (
+                                                            <tr {...row.getRowProps()}>
+                                                                {row.cells.map(cell => (
+                                                                    <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+                                                                ))}
+                                                            </tr>
+                                                        )
+                                                    })}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Tableau des demandes publiques */}
+                                <div className="col-12">
+                                    <div className="card recent-sales overflow-auto">
+                                        <div className="card-body">
+                                            <h5 className="card-title">Bilan <span>| Demandes Publiques</span></h5>
+                                            <table {...getTablePropsDemandesPublics()} className="table table-borderless">
+                                                <thead>
+                                                    {headerGroupsDemandesPublics.map(headerGroup => (
+                                                        <tr {...headerGroup.getHeaderGroupProps()}>
+                                                            {headerGroup.headers.map(column => (
+                                                                <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                                                            ))}
+                                                        </tr>
+                                                    ))}
+                                                </thead>
+                                                <tbody {...getTableBodyPropsDemandesPublics()}>
+                                                    {rowsDemandesPublics.map(row => {
+                                                        prepareRowDemandesPublics(row)
                                                         return (
                                                             <tr {...row.getRowProps()}>
                                                                 {row.cells.map(cell => (
