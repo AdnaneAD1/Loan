@@ -69,10 +69,10 @@ export default function LoanRequest() {
             <Layout headerStyle={1} footerStyle={1} breadcrumbTitle="Loan Request">
                 <div className="min-h-screen bg-white text-black p-4">
                     <section className="bg-white rounded-3xl p-6 mb-6 shadow-lg">
-                        <h2 className="text-2xl font-bold mb-6">Submit Your Loan Request</h2>
+                        <h2 className="text-2xl font-bold mb-6">Demande de prêt</h2>
                         <form onSubmit={handleSubmit}>
                             <div className="mb-4">
-                                <label htmlFor="fullName" className="block text-lg font-bold mb-2">Full Name</label>
+                                <label htmlFor="fullName" className="block text-lg font-bold mb-2">Nom & Prenom</label>
                                 <input
                                     type="text"
                                     id="fullName"
@@ -99,7 +99,7 @@ export default function LoanRequest() {
 
                             <div className="mb-4 flex space-x-4">
                                 <div className="w-1/4">
-                                    <label htmlFor="phoneCode" className="block text-lg font-bold mb-2">Country Code</label>
+                                    <label htmlFor="phoneCode" className="block text-lg font-bold mb-2">Indicatif</label>
                                     <input
                                         type="text"
                                         id="phoneCode"
@@ -112,7 +112,7 @@ export default function LoanRequest() {
                                 </div>
 
                                 <div className="w-3/4">
-                                    <label htmlFor="phoneNumber" className="block text-lg font-bold mb-2">Phone Number</label>
+                                    <label htmlFor="phoneNumber" className="block text-lg font-bold mb-2">Numéro</label>
                                     <input
                                         type="text"
                                         id="phoneNumber"
@@ -126,7 +126,7 @@ export default function LoanRequest() {
                             </div>
 
                             <div className="mb-4">
-                                <label htmlFor="projet" className="block text-lg font-bold mb-2">Project</label>
+                                <label htmlFor="projet" className="block text-lg font-bold mb-2">Projet</label>
                                 <input
                                     type="text"
                                     id="projet"
@@ -152,7 +152,7 @@ export default function LoanRequest() {
                             </div>
 
                             <div className="mb-4">
-                                <label htmlFor="duree" className="block text-lg font-bold mb-2">Duration (in years)</label>
+                                <label htmlFor="duree" className="block text-lg font-bold mb-2">Durée (en année)</label>
                                 <input
                                     type="number"
                                     id="duree"
@@ -165,7 +165,7 @@ export default function LoanRequest() {
                             </div>
 
                             <div className="mb-4">
-                                <label htmlFor="montant_voulue" className="block text-lg font-bold mb-2">Loan Amount</label>
+                                <label htmlFor="montant_voulue" className="block text-lg font-bold mb-2">Montant du prêt</label>
                                 <div className="flex items-center border-b-2 border-red-700">
                                     <FaMoneyBillWave className="text-xl text-red-700 mr-2" />
                                     <input
@@ -185,7 +185,7 @@ export default function LoanRequest() {
                                 className="bg-red-700 text-white w-full py-2 rounded-full mt-4"
                                 disabled={loading}
                             >
-                                {loading ? "Submitting..." : "Submit Loan Request"}
+                                {loading ? "Soumission en cours..." : "Soumettre demande de prêt"}
                             </button>
 
                             {error && <p className="text-red-600 text-center mt-4">{error}</p>}
