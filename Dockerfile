@@ -29,11 +29,12 @@ COPY . .
 # Installer les dépendances PHP
 RUN composer install --optimize-autoloader --no-dev
 
+# Migrer la base de données
+RUN php artisan migrate --force
+
 # Permissions pour le dossier de stockage et cache
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
-# Migrer la base de données
-RUN php artisan migrate --force
 
 # Exposer le port 9000 pour l'application
 EXPOSE 9000
