@@ -13,7 +13,7 @@ import Layout from "@/components/layout/Layout"
 const ClientRegister = () => {
     const { registerClient } = useAuth({
         middleware: 'guest',
-        redirectIfAuthenticated: '/login',
+        redirectIfAuthenticated: '/dash',
     })
 
     const [name, setName] = useState('')
