@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import AuthSessionStatus from '@/app/(auth)/AuthSessionStatus'
 import Layout from "@/components/layout/Layout";
-import ClientLoginForm from '@/components/ClientLoginForm'
+import ClientLoginForm from '@/components/formlogin'
 
 const ClientLogin = () => {
     const router = useRouter()
