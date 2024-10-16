@@ -95,23 +95,6 @@ const ClientRegister = () => {
                                 <InputError messages={errors.name} className="mt-2" />
                             </div>
 
-                            {/* Email Address */}
-                            <div className="mt-4">
-                                <Label htmlFor="email">Email</Label>
-
-                                <Input
-                                    id="email"
-                                    type="email"
-                                    value={email}
-                                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                                    placeholder="Email address"
-                                    onChange={event => setEmail(event.target.value)}
-                                    required
-                                />
-
-                                <InputError messages={errors.email} className="mt-2" />
-                            </div>
-
                             {/* Prenom */}
                             <div className="mt-4">
                                 <Label htmlFor="prenom">Prenom</Label>
@@ -128,6 +111,23 @@ const ClientRegister = () => {
                                 />
 
                                 <InputError messages={errors.prenom} className="mt-2" />
+                            </div>
+
+                            {/* Email Address */}
+                            <div className="mt-4">
+                                <Label htmlFor="email">Email</Label>
+
+                                <Input
+                                    id="email"
+                                    type="email"
+                                    value={email}
+                                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                                    placeholder="Email address"
+                                    onChange={event => setEmail(event.target.value)}
+                                    required
+                                />
+
+                                <InputError messages={errors.email} className="mt-2" />
                             </div>
 
                             {/* Téléphone et Identifiant de Pays */}
