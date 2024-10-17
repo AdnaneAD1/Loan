@@ -73,20 +73,27 @@ const Profile = () => {
                     </div>
                 </div>
 
-                {['name', 'email', 'tel', '${pays}${ville}${adresse_rue}'].map((field) => (
+                {['name', 'email', 'tel', 'address'].map((field) => (
                     <div key={field} className="mb-4">
                         <h2 className="text-lg font-bold capitalize">{field}</h2>
                         {isEditing[field] ? (
                             <input
                                 type={field === 'email' ? 'email' : 'text'}
                                 name={field}
-                                value={userData[field]}
+                                value={field === 'address' 
+                                    ? `${userData.pays}, ${userData.ville}, ${userData.adresse_rue}` 
+                                    : userData[field]
+                                }
                                 onChange={handleInputChange}
                                 className="border-b-2 border-red-700 w-full py-1 text-black"
                                 onBlur={() => handleSubmit(field)}
                             />
                         ) : (
-                            <p className="text-black" onClick={() => toggleEdit(field)}>{userData[field]}</p>
+                            <p className="text-black" onClick={() => toggleEdit(field)}>
+                                {field === 'address' 
+                                ? `${userData.pays}, ${userData.ville}, ${userData.adresse_rue}` 
+                                : userData[field]}
+                            </p>
                         )}
                     </div>
                 ))}
