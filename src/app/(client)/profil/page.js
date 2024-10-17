@@ -73,7 +73,7 @@ const Profile = () => {
                     </div>
                 </div>
 
-                {['name', 'email', 'tel', 'address'].map((field) => (
+                {['name', 'email', 'tel', '${pays}${ville}${adresse_rue}'].map((field) => (
                     <div key={field} className="mb-4">
                         <h2 className="text-lg font-bold capitalize">{field}</h2>
                         {isEditing[field] ? (
