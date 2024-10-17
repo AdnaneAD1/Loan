@@ -114,8 +114,8 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                     <div className="contact-info">
                         <h4>Contact Info</h4>
                         <ul>
-                            <li><Link href="tel:+8801682648101">metrobanknumero</Link></li>
-                            <li><Link href="mailto:contact@metrobnque.xyz">metrobankmail</Link></li>
+                            <li><Link href="tel:+33757852015">metrobank numero</Link></li>
+                            <li><Link href="mailto:contact@metrobnque.xyz">metrobank email</Link></li>
                         </ul>
                     </div>
 

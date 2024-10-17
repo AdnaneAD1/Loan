@@ -7,6 +7,22 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isSide
         <>
             <header className={`main-header header-style-one ${scroll ? "fixed-header" : ""}`}>
                 {/* Header Top */}
+                <div className="auto-container">
+                    <div className="header-top">
+                    <div className="top-inner">
+                        <ul className="info-list clearfix">
+                        <li>
+                            <i className="icon-1"></i>
+                            <Link href="mailto:contact@metrobnque.xyz">metrobank email</Link>
+                        </li>
+                        <li>
+                            <i className="icon-2"></i>
+                            <Link href="tel:+33757852015">metrobank numero</Link
+                        </li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
                 {/* Header lower */}
                 <div className="header-lower">
                     <div className="large-container">
