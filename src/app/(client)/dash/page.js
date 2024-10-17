@@ -59,7 +59,7 @@ const Home = () => {
             </header>
 
             <section className="bg-white rounded-3xl p-6 mb-6 shadow-lg">
-                <h2 className="text-center text-2xl font-extrabold mb-1 text-black">Your Balance</h2>
+                <h2 className="text-center text-2xl font-extrabold mb-1 text-black">Votre Solde</h2>
                 <p className="text-center text-4xl font-bold text-red-700 mb-4">${balance.toLocaleString()}</p>
                 <div className="flex justify-around mt-4">
                     <button onClick={handleSendMoney} className="bg-red-700 text-white rounded-full p-3 flex flex-col items-center shadow-md">
