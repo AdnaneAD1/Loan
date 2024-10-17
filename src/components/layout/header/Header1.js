@@ -17,7 +17,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isSide
                         </li>
                         <li>
                             <i className="icon-2"></i>
-                            <Link href="tel:+33757852015">metrobank numero</Link
+                            <Link href="tel:+33757852015">metrobank numero</Link>
                         </li>
                         </ul>
                     </div>
