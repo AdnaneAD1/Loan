@@ -1,83 +1,25 @@
-import Link from "next/link"
-// import { useRouter } from "next/router"
+import Link from "next/link";
 
 export default function Menu() {
-    // const router = useRouter()
-
     return (
-        <>
-
-            {/* <ul className="sub-menu">
-                <Link className={router.pathname == "/" ? "active" : ""}>Home Default</Link>
-                <Link className={router.pathname == "/index-2" ? "active" : ""}>Home Interior</Link>
-            </ul> */}
-
-            <ul className="navigation clearfix">
-                <li><Link href="/">Accueil</Link>
-                    {/* <ul>
-                        <li><Link href="/">Home Page One</Link></li>
-                        <li><Link href="/index-2">Home Page Two</Link></li>
-                        <li><Link href="/index-3">Home Page Three</Link></li>
-                        <li><Link href="/index-onepage">OnePage Home</Link></li>
-                    </ul> */}
+        <nav>
+            <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 navigation clearfix">
+                <li className="group relative">
+                    <Link href="/" className="text-black hover:text-red-600">Accueil</Link>
                 </li>
-                <li><Link href="/login">Connexion</Link></li>
-                <li><Link href="/register">Inscription</Link></li>
-                <li><Link href="/about">A propos</Link></li>
-                {/* <li className="dropdown"><Link href="/">Services</Link>
-                    <ul>
-                        <li><Link href="/service">Our Services</Link></li>
-                        <li><Link href="/service-2">Our Services 2</Link></li>
-                        <li><Link href="/service-details">Digital Banking</Link></li>
-                        <li><Link href="/service-details-2">Mobile & Web Banking</Link></li>
-                        <li><Link href="/service-details-3">Insurance Policies</Link></li>
-                        <li><Link href="/service-details-4">Home & Property Loan</Link></li>
-                        <li><Link href="/service-details-5">All Bank Account</Link></li>
-                        <li><Link href="/service-details-6">Borrowing Accounts</Link></li>
-                        <li><Link href="/service-details-7">Private Banking</Link></li>
-                        <li><Link href="/service-details-8">Fixed Term Account</Link></li>
-                    </ul>
-                </li> */}
-                {/* <li className="dropdown"><Link href="/">Pages</Link>
-                    <ul>
-                        <li className="dropdown"><Link href="/">Directors</Link>
-                            <ul>
-                                <li><Link href="/team">Board of Directors</Link></li>
-                                <li><Link href="/team-details">Director Details</Link></li>
-                            </ul>
-                        </li>
-                        <li className="dropdown"><Link href="/">Career</Link>
-                            <ul>
-                                <li><Link href="/career">Career Page</Link></li>
-                                <li><Link href="/career-details">Career Details</Link></li>
-                            </ul>
-                        </li>
-                        <li className="dropdown"><Link href="/">Blog</Link>
-                            <ul>
-                                <li><Link href="/blog">Blog Grid</Link></li>
-                                <li><Link href="/blog-2">Blog Image</Link></li>
-                                <li><Link href="/blog-3">Blog Standard</Link></li>
-                                <li><Link href="/blog-details">Blog Details</Link></li>
-                            </ul>
-                        </li>
-                        <li><Link href="/currency">Currency Exchange</Link></li>
-                        <li><Link href="/credit-cards">Credit Cards</Link></li>
-                        <li><Link href="/faq">General FAQ’s</Link></li>
-                        <li><Link href="/error">404 Error</Link></li>
-                    </ul>
-                </li> */}
-                <li><Link href="/contact">Contact</Link></li>
+                <li className="group relative">
+                    <Link href="/login" className="text-black hover:text-red-600">Connexion</Link>
+                </li>
+                <li className="group relative">
+                    <Link href="/register" className="text-black hover:text-red-600">Inscription</Link>
+                </li>
+                <li className="group relative">
+                    <Link href="/about" className="text-black hover:text-red-600">À propos</Link>
+                </li>
+                <li className="group relative">
+                    <Link href="/contact" className="text-black hover:text-red-600">Contact</Link>
+                </li>
             </ul>
-        </>
-    )
+        </nav>
+    );
 }
-
-
-
-
-
-
-
-
-
-
