@@ -60,27 +60,35 @@ const Transactions = () => {
                 </button>
             </div>
 
-            <div>
-                <table className="w-full bg-white rounded-lg border border-gray-200">
+            <div className="table-responsive">
+                <table className="table table-hover">
                     <thead>
                         <tr className="text-left border-b-2 border-red-500">
                             <th className="p-2 text-black">Date</th>
                             <th className="p-2 text-black">Bénéficiaire</th>
                             <th className="p-2 text-black">Type</th>
-                            <th className="p-2 text-black">Montant</th>
-                            <th className="p-2 text-black">Statut</th> {/* Nouvelle colonne pour le statut */}
+                            <th className="p-2 text-black" style={{ fontSize: '0.9rem' }}>Montant</th>
+                            <th className="p-2 text-black">Statut</th>
                         </tr>
                     </thead>
                     <tbody>
                         {transactions.map((transaction) => (
-                            <tr key={transaction.id} className="hover:bg-gray-200">
+                            <tr
+                                key={transaction.id}
+                                className={`hover:bg-gray-200 ${transaction.type === 'withdrawal' && transaction.statut === 'pending' ? 'cursor-pointer' : ''}`}
+                                onClick={() => {
+                                    if (transaction.type === 'withdrawal' && transaction.statut === 'pending') {
+                                        router.push('/codetransaction');
+                                    }
+                                }}
+                            >
                                 <td className="p-2 text-black">{new Date(transaction.transaction_date).toLocaleDateString()}</td>
                                 <td className="p-2 text-black">{transaction.beneficiary_name}</td>
                                 <td className="p-2 text-black">{transaction.type === 'deposit' ? 'Dépôt' : 'Retrait'}</td>
-                                <td className="p-2 text-black">{transaction.amount} €</td>
+                                <td className="p-2 text-black" style={{ fontSize: '0.9rem' }}>{transaction.amount} €</td>
                                 <td className={`p-2capitalize ${transaction.statut === 'approved' ? 'text-green-500' : transaction.statut === 'cancelled' ? 'text-red-500' : 'text-yellow-500'}`}>
                                     {transaction.statut}
-                                </td> {/* Statut avec une couleur différente */}
+                                </td>
                             </tr>
                         ))}
                     </tbody>
