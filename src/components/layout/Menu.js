@@ -12,7 +12,7 @@ export default function Menu() {
                 <Link className={router.pathname == "/index-2" ? "active" : ""}>Home Interior</Link>
             </ul> */}
 
-            <ul className="navigation">
+            <ul className="navigationc clearfix">
                 <li><Link href="/">Accueil</Link>
                     {/* <ul>
                         <li><Link href="/">Home Page One</Link></li>

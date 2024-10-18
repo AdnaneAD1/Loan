@@ -887,11 +887,11 @@ img {
   display:block !important;
 }
 
-.main-menu .navigation{
+.main-menu .navigationc{
   margin:0px;
 }
 
-.main-menu .navigation > li{
+.main-menu .navigationc > li{
   position:inherit;
   float:left;
   z-index:2;
@@ -903,15 +903,15 @@ img {
   transition:all 300ms ease;
 }
 
-.main-menu .navigation > li:last-child{
+.main-menu .navigationc > li:last-child{
   margin-right:0px !important;
 }
 
-.main-menu .navigation > li:first-child{
+.main-menu .navigationc > li:first-child{
   margin-left: 0px !important;
 }
 
-.main-menu .navigation > li > a{
+.main-menu .navigationc > li > a{
   position:relative;
   display:block;
   text-align:center;
@@ -931,16 +931,16 @@ img {
   transition:all 500ms ease;
 }
 
-.main-menu .navigation > li.dropdown > a{
+.main-menu .navigationc > li.dropdownc > a{
   padding-right: 17px;
 }
 
-.main-menu .navigation > li.current > a,
-.main-menu .navigation > li:hover > a{
+.main-menu .navigationc > li.current > a,
+.main-menu .navigationc > li:hover > a{
   
 }
 
-.main-menu .navigation > li.dropdown > a:before{
+.main-menu .navigationc > li.dropdownc > a:before{
   position: absolute;
   content: "\f107";
   font-family: 'Font Awesome 5 Pro';
@@ -950,8 +950,8 @@ img {
   transition: all 500ms ease;
 }
 
-.main-menu .navigation > li > ul,
-.main-menu .navigation > li > .megamenu{
+.main-menu .navigationc > li > ul,
+.main-menu .navigationc > li > .megamenu{
   position:absolute;
   left: inherit;
   top:100%;
@@ -970,18 +970,18 @@ img {
   -o-transition:all 500ms ease;
 }
 
-.main-menu .navigation > li > ul.from-right{
+.main-menu .navigationc > li > ul.from-right{
   left:auto;
   right:0px;  
 }
 
-.main-menu .navigation > li > ul > li{
+.main-menu .navigationc > li > ul > li{
   position:relative;
   width:100%;
 }
 
-.main-menu .navigation > li > ul > li > a,
-.main-menu .navigation > li > .megamenu li > a{
+.main-menu .navigationc > li > ul > li > a,
+.main-menu .navigationc > li > .megamenu li > a{
   position:relative;
   display:block;
   padding: 10px 25px;
@@ -999,32 +999,32 @@ img {
   -o-transition:all 500ms ease;
 }
 
-.main-menu .navigation > li > ul > li > a{
+.main-menu .navigationc > li > ul > li > a{
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.main-menu .navigation > li > .megamenu li > a{
+.main-menu .navigationc > li > .megamenu li > a{
   padding-left: 0px;
 }
 
-.main-menu .navigation > li > .megamenu h4{
+.main-menu .navigationc > li > .megamenu h4{
   display: block;
   font-size: 20px;
   line-height: 30px;
   color: #ffffff;
 }
 
-.main-menu .navigation > li > ul > li > a:hover,
-.main-menu .navigation > li > .megamenu li > a:hover{
+.main-menu .navigationc > li > ul > li > a:hover,
+.main-menu .navigationc > li > .megamenu li > a:hover{
   padding-left: 35px;
 }
 
-.main-menu .navigation > li > ul > li:last-child > a,
-.main-menu .navigation > li > .megamenu li:last-child > a{
+.main-menu .navigationc > li > ul > li:last-child > a,
+.main-menu .navigationc > li > .megamenu li:last-child > a{
   border-bottom: none;
 }
 
-.main-menu .navigation > li > ul > li.dropdown > a:after{
+.main-menu .navigationc > li > ul > li.dropdownc > a:after{
   font-family: 'Font Awesome 5 Pro';
   content: "\f105";
   position:absolute;
@@ -1038,7 +1038,7 @@ img {
   z-index:5;  
 }
 
-.main-menu .navigation > li > ul > li > ul{
+.main-menu .navigationc > li > ul > li > ul{
   position:absolute;
   left:100%;
   top:0%;
@@ -1055,21 +1055,21 @@ img {
   -o-transition:all 500ms ease;
 }
 
-.main-menu .navigation > li > ul > li > ul.from-right{
+.main-menu .navigationc > li > ul > li > ul.from-right{
   left:auto;
   right:0px;  
 }
 
-.main-menu .navigation > li > ul > li > ul > li{
+.main-menu .navigationc > li > ul > li > ul > li{
   position:relative;
   width:100%;
 }
 
-.main-menu .navigation > li > ul > li > ul > li:last-child{
+.main-menu .navigationc > li > ul > li > ul > li:last-child{
   border-bottom:none; 
 }
 
-.main-menu .navigation > li > ul > li > ul > li > a{
+.main-menu .navigationc > li > ul > li > ul > li > a{
   position:relative;
   display:block;
   padding:10px 25px;
@@ -1088,15 +1088,15 @@ img {
   -o-transition:all 500ms ease;
 }
 
-.main-menu .navigation > li > ul > li > ul > li:last-child > a{
+.main-menu .navigationc > li > ul > li > ul > li:last-child > a{
   border-bottom: none;
 }
 
-.main-menu .navigation > li > ul > li > ul > li > a:hover{
+.main-menu .navigationc > li > ul > li > ul > li > a:hover{
   padding-left: 35px;
 }
 
-.main-menu .navigation > li > ul > li > ul > li.dropdown > a:after{
+.main-menu .navigationc > li > ul > li > ul > li.dropdownc > a:after{
   font-family: 'Font Awesome 5 Pro';
   content: "\f105";
   position:absolute;
@@ -1109,22 +1109,22 @@ img {
   z-index:5;  
 }
 
-.main-menu .navigation > li.dropdown:hover > ul,
-.main-menu .navigation > li.dropdown:hover > .megamenu{
+.main-menu .navigationc > li.dropdownc:hover > ul,
+.main-menu .navigationc > li.dropdownc:hover > .megamenu{
   visibility:visible;
   opacity:1;
   margin-top: 0px;
   top: 100%;
 }
 
-.main-menu .navigation li > ul > li.dropdown:hover > ul{
+.main-menu .navigationc li > ul > li.dropdownc:hover > ul{
   visibility:visible;
   opacity:1;
   top: 0%; 
   margin-top: 0px;
 }
 
-.main-menu .navigation li.dropdown .dropdown-btn{
+.main-menu .navigationc li.dropdownc .dropdownc-btn{
   position:absolute;
   right:-32px;
   top:66px;
@@ -1140,12 +1140,12 @@ img {
   transition: all 500ms ease;
 }
 
-.main-menu .navigation li.current.dropdown .dropdown-btn,
-.main-menu .navigation li:hover .dropdown-btn{
+.main-menu .navigationc li.current.dropdownc .dropdownc-btn,
+.main-menu .navigationc li:hover .dropdownc-btn{
   
 }
 
-.main-menu .navigation li.dropdown ul li.dropdown .dropdown-btn{
+.main-menu .navigationc li.dropdownc ul li.dropdownc .dropdownc-btn{
   display: none;
 }
 
@@ -1184,23 +1184,23 @@ img {
 
 /** megamenu-style **/
 
-.main-menu .navigation > li.dropdown > .megamenu{
+.main-menu .navigationc > li.dropdownc > .megamenu{
   position: absolute;
   width: 100%;
   padding: 30px 50px;
   left: 0px;
 }
 
-.main-menu .navigation li.dropdown .megamenu li h4{
+.main-menu .navigationc li.dropdownc .megamenu li h4{
   margin-bottom: 10px;
 }
 
-.sticky-header .main-menu .navigation > li > a{
+.sticky-header .main-menu .navigationc > li > a{
   padding-top: 27px;
   padding-bottom: 27px;
 }
 
-.sticky-header .main-menu .navigation > li.dropdown > a:before{
+.sticky-header .main-menu .navigationc > li.dropdownc > a:before{
   top: 27px;
 }
 
@@ -1337,28 +1337,28 @@ img {
   transform:rotate(90deg);
 }
 
-.mobile-menu .navigation{
+.mobile-menu .navigationc{
   position: relative;
   display: block;
   width: 100%;
   float: none;
 }
 
-.mobile-menu .navigation li{
+.mobile-menu .navigationc li{
   position: relative;
   display: block;
   border-top: 1px solid rgba(255,255,255,0.10);
 }
 
-.mobile-menu .navigation:last-child{
+.mobile-menu .navigationc:last-child{
   border-bottom: 1px solid rgba(255,255,255,0.10);
 }
 
-.mobile-menu .navigation li > ul > li:first-child{
+.mobile-menu .navigationc li > ul > li:first-child{
   border-top: 1px solid rgba(255,255,255,0.10);
 }
 
-.mobile-menu .navigation li > a{
+.mobile-menu .navigationc li > a{
   position: relative;
   display: block;
   line-height: 24px;
@@ -1374,13 +1374,13 @@ img {
   transition: all 500ms ease; 
 }
 
-.mobile-menu .navigation li ul li > a{
+.mobile-menu .navigationc li ul li > a{
   font-size: 16px;
   margin-left: 20px;
   text-transform: capitalize;
 }
 
-.mobile-menu .navigation li > a:before{
+.mobile-menu .navigationc li > a:before{
   content:'';
   position:absolute;
   left:0;
@@ -1394,11 +1394,11 @@ img {
   transition: all 500ms ease; 
 }
 
-.mobile-menu .navigation li.current > a:before{
+.mobile-menu .navigationc li.current > a:before{
   height:100%;
 }
 
-.mobile-menu .navigation li.dropdown .dropdown-btn{
+.mobile-menu .navigationc li.dropdownc .dropdownc-btn{
   position:absolute;
   right:6px;
   top:6px;
@@ -1419,16 +1419,16 @@ img {
   z-index:5;
 }
 
-.mobile-menu .navigation li.dropdown .dropdown-btn.open{
+.mobile-menu .navigationc li.dropdownc .dropdownc-btn.open{
   color: #ffffff;
   -webkit-transform:rotate(90deg);
   -ms-transform:rotate(90deg);
   transform:rotate(90deg);  
 }
 
-.mobile-menu .navigation li > ul,
-.mobile-menu .navigation li > ul > li > ul,
-.mobile-menu .navigation > li.dropdown > .megamenu{
+.mobile-menu .navigationc li > ul,
+.mobile-menu .navigationc li > ul > li > ul,
+.mobile-menu .navigationc > li.dropdownc > .megamenu{
   display: none;
 }
 
@@ -2080,9 +2080,9 @@ button.ltr {
 
 
 @media only screen and (min-width: 768px){
-  .main-menu .navigation > li > ul,
-  .main-menu .navigation > li > ul > li > ul,
-  .main-menu .navigation > li > .megamenu{
+  .main-menu .navigationc > li > ul,
+  .main-menu .navigationc > li > ul > li > ul,
+  .main-menu .navigationc > li > .megamenu{
     display:block !important;
     visibility:hidden;
     opacity:0;
