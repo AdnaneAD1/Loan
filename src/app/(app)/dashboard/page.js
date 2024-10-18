@@ -48,10 +48,10 @@ const Dashboard = () => {
             { Header: 'Client', accessor: row => `${row.client.nom} ${row.client.prenom}` },
             { Header: 'E-mail Client', accessor: 'client.email' },
             { Header: 'Projet', accessor: 'projet' },
-            { Header: 'Montant', accessor: 'montant_voulu', Cell: ({ value }) => `$${value}` },
-            { Header: 'Reste', accessor: 'montant_restant', Cell: ({ value }) => `$${value < 0 ? 0 : value}` },
+            { Header: 'Montant', accessor: 'montant_voulu', Cell: ({ value }) => `€${value}` },
+            { Header: 'Reste', accessor: 'montant_restant', Cell: ({ value }) => `€${value < 0 ? 0 : value}` },
             { Header: 'Statut', accessor: 'statut', Cell: ({ value }) => (
-                <span className={`badge bg-${value === 'valide' || value === 'paid' ? 'success' : (value === 'pending' ? 'warning' : 'danger')}`}>
+                <span className={`badge bg-€{value === 'valide' || value === 'paid' ? 'success' : (value === 'pending' ? 'warning' : 'danger')}`}>
                     {value}
                 </span>
             ) },
@@ -66,10 +66,10 @@ const Dashboard = () => {
             { Header: '#', accessor: 'id' },
             { Header: 'E-mail', accessor: 'email' },
             { Header: 'Projet', accessor: 'projet' },
-            { Header: 'Montant Voulu', accessor: 'montant_voulu', Cell: ({ value }) => `$${value}` },
-            { Header: 'Montant Restant', accessor: 'montant_restant', Cell: ({ value }) => `$${value < 0 ? 0 : value}` },
+            { Header: 'Montant Voulu', accessor: 'montant_voulu', Cell: ({ value }) => `€${value}` },
+            { Header: 'Montant Restant', accessor: 'montant_restant', Cell: ({ value }) => `€${value < 0 ? 0 : value}` },
             { Header: 'Statut', accessor: 'statut', Cell: ({ value }) => (
-                <span className={`badge bg-${value === 'valide' || value === 'paid' ? 'success' : (value === 'pending' ? 'warning' : 'danger')}`}>
+                <span className={`badge bg-€{value === 'valide' || value === 'paid' ? 'success' : (value === 'pending' ? 'warning' : 'danger')}`}>
                     {value}
                 </span>
             ) },
@@ -151,7 +151,7 @@ const Dashboard = () => {
                                                     <i className="bi bi-currency-dollar"></i>
                                                 </div>
                                                 <div className="ps-3">
-                                                    <h6>${data.montantTotal}</h6>
+                                                    <h6>€{data.montantTotal}</h6>
                                                 </div>
                                             </div>
                                         </div>
