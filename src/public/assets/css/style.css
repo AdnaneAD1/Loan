@@ -882,7 +882,7 @@ img {
   float: left;
 }
 
-.main-menu .navbar-collapse{
+.main-menu .navbar-collapsec{
   padding:0px;
   display:block !important;
 }
@@ -1237,7 +1237,7 @@ img {
   transition: all 900ms ease;
 }
 
-.mobile-menu .navbar-collapse{
+.mobile-menu .navbar-collapsec{
   display:block !important; 
 }
 
