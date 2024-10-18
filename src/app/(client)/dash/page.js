@@ -61,12 +61,9 @@ const Home = () => {
             <section className="bg-white rounded-3xl p-6 mb-6 shadow-lg">
                 <h2 className="text-center text-2xl font-extrabold mb-1 text-black">Votre Solde</h2>
                 <p className="text-center text-4xl font-bold text-red-700 mb-4">€{balance.toLocaleString()}</p>
-                <div className="flex justify-around mt-4">
-                    <button onClick={handleSendMoney} className="bg-red-700 text-white rounded-full p-3 flex flex-col items-center shadow-md">
-                        <FaArrowRight className="text-2xl mb-2" />
-                        Retrait
-                    </button>
-                </div>
+                {/* <div className="flex justify-around mt-4">
+                    
+                </div> */}
             </section>
 
             <section className="bg-white p-4 rounded-2xl shadow-lg">
@@ -93,13 +90,13 @@ const Home = () => {
                     <FaHome className="text-2xl" />
                     <span className="text-xs">Accueil</span>
                 </button>
-                <button onClick={() => router.push('/codetransaction')} className="flex flex-col items-center text-gray-400">
-                    <FaWallet className="text-2xl" />
-                    <span className="text-xs">Entrer codes</span>
-                </button>
                 <button onClick={() => router.push('/historique')} className="flex flex-col items-center text-gray-400">
                     <FaMoneyBillWave className="text-2xl" />
                     <span className="text-xs">Historique</span>
+                </button>
+                <button onClick={handleSendMoney} className="bg-red-700 text-white rounded-full p-3 flex flex-col items-center shadow-md">
+                    <FaArrowRight className="text-2xl mb-2" />
+                    <span className="text-xs">Retrait</span>
                 </button>
                 <button onClick={() => router.push('/loan')} className="flex flex-col items-center text-gray-400">
                     <FaChartPie className="text-2xl" />
