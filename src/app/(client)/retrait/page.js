@@ -180,7 +180,7 @@ export default function SendMoney() {
                             />
                         </div>
 
-                        <div className="mb-4">
+                        {/* <div className="mb-4">
                             <label className="block text-black font-bold mb-2" htmlFor="transferAmount">Montant à transférer</label>
                             <input
                                 type="number"
@@ -193,7 +193,7 @@ export default function SendMoney() {
                                 min="0.01"
                                 required
                             />
-                        </div>
+                        </div> */}
 
                         <div className="mb-4">
                             <label className="block text-black font-bold mb-2" htmlFor="currency">Devise</label>
