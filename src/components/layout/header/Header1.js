@@ -7,7 +7,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isSide
         <>
             <header className={`main-header header-style-one ${scroll ? "fixed-header" : ""}`}>
                 {/* Header Top */}
-                <div className="auto-container">
+                {/* <div className="auto-container">
                     <div className="header-top">
                     <div className="top-inner">
                         <ul className="info-list clearfix">
@@ -22,7 +22,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isSide
                         </ul>
                     </div>
                     </div>
-                </div>
+                </div> */}
                 {/* Header lower */}
                 <div className="header-lower">
                     <div className="large-container">

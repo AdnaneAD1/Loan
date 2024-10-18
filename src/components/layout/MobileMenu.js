@@ -39,7 +39,7 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                     {/*menu-outer*/}
                     <div className="menu-outer">
                         <div className="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                            <ul className="navigation clearfix">
+                            <ul className="navigation">
                                 <li><Link href="/">Accueil</Link>
                                     {/* <ul style={{ display: `${isActive.key == 1 ? "block" : "none"}` }}>
                                         <li><Link href="/">Home Page One</Link></li>
