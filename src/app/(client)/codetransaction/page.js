@@ -200,7 +200,7 @@ const CodeEntry = () => {
             if (response.data.success) {
                 const targetProgress = progress + 25;
                 incrementProgressGradually(targetProgress); // Incrémenter la barre
-                setAlert('Code accepté. Veuillez patienter.'); // Modifier le message d'alerte
+                setAlert('Code accepté. Veuillez entrer le prochain.'); // Modifier le message d'alerte
                 
                 if (currentCodeIndex < 3) {
                     setCurrentCodeIndex(currentCodeIndex + 1); // Passer au code suivant
