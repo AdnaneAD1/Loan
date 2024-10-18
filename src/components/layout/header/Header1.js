@@ -39,7 +39,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isSide
                             <i className="icon-bar"></i>
                         </div>
                         <nav className="main-menu navbar-expand-md navbar-light clearfix">
-                            <div className="collapse navbar-collapsec show clearfix" id="navbarSupportedContent">
+                            <div className="navbar-collapsec show clearfix" id="navbarSupportedContent">
                                 <Menu />
                             </div>
                         </nav>
@@ -62,7 +62,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isSide
                         </div>
                         <div className="menu-area">
                             <nav className="main-menu clearfix">
-                                <div className="collapse navbar-collapsec show clearfix" id="navbarSupportedContent">
+                                <div className="navbar-collapsec show clearfix" id="navbarSupportedContent">
                                     <Menu />
                                 </div>
                             </nav>
