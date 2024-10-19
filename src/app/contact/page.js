@@ -80,7 +80,7 @@ export default function Home() {
                                         <div className="inner-box">
                                             <div className="icon-box"><i className="icon-44"></i></div>
                                             <h3>Numéro de téléphone</h3>
-                                            <p>Emergency Cases <br /><Link href="tel:+33757852015">+33 7 57 85 20 15</Link> (24/7)</p>
+                                            <p><Link href="tel:+33757852015">+33 7 57 85 20 15</Link> (24/7)</p>
                                         </div>
                                     </div>
                                 </div>
