@@ -41,7 +41,7 @@ export default function News() {
                                             2022
                                         </span>
                                         <h3>
-                                            <Link href="/blog-details">
+                                            <Link href="">
                                                 Conduite Autonome et Visites
                                                 Guidées de la Grande Ville
                                             </Link>
@@ -49,18 +49,15 @@ export default function News() {
                                         <ul className="post-info mb_25">
                                             <li>
                                                 <i className="icon-28"></i>
-                                                <Link href="/blog-details">
+                                                <Link href="">
                                                     Admin
                                                 </Link>
                                             </li>
-                                            <li>
-                                                <i className="icon-29"></i>0
-                                                Commentaire
-                                            </li>
+                                            
                                         </ul>
                                         <div className="btn-box">
                                             {/* <Link
-                                                href="/blog-details"
+                                                href=""
                                                 className="theme-btn btn-three">
                                                 En Savoir Plus
                                             </Link> */}
@@ -86,7 +83,7 @@ export default function News() {
                                             2022
                                         </span>
                                         <h3>
-                                            <Link href="/blog-details">
+                                            <Link href="">
                                                 Assistance pour Maisons &
                                                 Propriétés Immobilières
                                             </Link>
@@ -94,18 +91,15 @@ export default function News() {
                                         <ul className="post-info mb_25">
                                             <li>
                                                 <i className="icon-28"></i>
-                                                <Link href="/blog-details">
+                                                <Link href="">
                                                     Admin
                                                 </Link>
                                             </li>
-                                            <li>
-                                                <i className="icon-29"></i>4
-                                                Commentaires
-                                            </li>
+                                            
                                         </ul>
                                         <div className="btn-box">
                                             {/* <Link
-                                                href="/blog-details"
+                                                href=""
                                                 className="theme-btn btn-three">
                                                 En Savoir Plus
                                             </Link> */}
@@ -131,7 +125,7 @@ export default function News() {
                                             2022
                                         </span>
                                         <h3>
-                                            <Link href="/blog-details">
+                                            <Link href="">
                                                 Vision à Long Terme de la Santé
                                                 et des Installations Attrayantes
                                             </Link>
@@ -139,18 +133,18 @@ export default function News() {
                                         <ul className="post-info mb_25">
                                             <li>
                                                 <i className="icon-28"></i>
-                                                <Link href="/blog-details">
+                                                <Link href="">
                                                     Admin
                                                 </Link>
                                             </li>
-                                            <li>
+                                            {/* <li>
                                                 <i className="icon-29"></i>1
                                                 Commentaire
-                                            </li>
+                                            </li> */}
                                         </ul>
                                         <div className="btn-box">
                                             {/* <Link
-                                                href="/blog-details"
+                                                href=""
                                                 className="theme-btn btn-three">
                                                 En Savoir Plus
                                             </Link> */}
