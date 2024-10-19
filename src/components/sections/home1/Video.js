@@ -14,7 +14,7 @@ export default function About() {
                     <div className="inner-box">
                         <h2>La Banque Commerciale Privée de 3ème Génération</h2>
                         <div className="video-btn">
-                            <VideoPopup />
+                            {/* <VideoPopup /> */}
                         </div>
                     </div>
                 </div>

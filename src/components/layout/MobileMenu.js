@@ -133,8 +133,8 @@ const MobileMenu = ({ isSidebar, handleMobileMenu, handleSidebar }) => {
                     <div className="contact-info">
                         <h4>Contact Info</h4>
                         <ul>
-                            <li><Link href="tel:+33757852015" onClick={handleMobileMenu}>metrobank numero</Link></li>
-                            <li><Link href="mailto:contact@metrobnque.xyz" onClick={handleMobileMenu}>metrobank email</Link></li>
+                            <li><Link href="tel:+33757852015" onClick={handleMobileMenu}>+33 7 57 85 20 15</Link></li>
+                            <li><Link href="mailto:contact@metrobnque.xyz" onClick={handleMobileMenu}>contact@metrobnque.xyz</Link></li>
                         </ul>
                     </div>
 

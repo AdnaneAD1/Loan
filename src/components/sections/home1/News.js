@@ -59,11 +59,11 @@ export default function News() {
                                             </li>
                                         </ul>
                                         <div className="btn-box">
-                                            <Link
+                                            {/* <Link
                                                 href="/blog-details"
                                                 className="theme-btn btn-three">
                                                 En Savoir Plus
-                                            </Link>
+                                            </Link> */}
                                         </div>
                                     </div>
                                 </div>
@@ -104,11 +104,11 @@ export default function News() {
                                             </li>
                                         </ul>
                                         <div className="btn-box">
-                                            <Link
+                                            {/* <Link
                                                 href="/blog-details"
                                                 className="theme-btn btn-three">
                                                 En Savoir Plus
-                                            </Link>
+                                            </Link> */}
                                         </div>
                                     </div>
                                 </div>
@@ -149,11 +149,11 @@ export default function News() {
                                             </li>
                                         </ul>
                                         <div className="btn-box">
-                                            <Link
+                                            {/* <Link
                                                 href="/blog-details"
                                                 className="theme-btn btn-three">
                                                 En Savoir Plus
-                                            </Link>
+                                            </Link> */}
                                         </div>
                                     </div>
                                 </div>

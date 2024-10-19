@@ -70,8 +70,8 @@ export default function Home() {
                                     <div className="info-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                                         <div className="inner-box">
                                             <div className="icon-box"><i className="icon-43"></i></div>
-                                            <h3>Email Address</h3>
-                                            <p><Link href="mailto:contact@example.com">contact@example.com</Link><br /> <Link href="mailto:support@example.com">support@example.com</Link></p>
+                                            <h3>Adresse Email</h3>
+                                            <p><Link href="mailto:contact@metrobnque.xyz">contact@metrobnque.xyz</Link><br /> <Link href="mailto:support@example.com">support@example.com</Link></p>
                                         </div>
                                     </div>
                                 </div>
@@ -79,8 +79,8 @@ export default function Home() {
                                     <div className="info-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                                         <div className="inner-box">
                                             <div className="icon-box"><i className="icon-44"></i></div>
-                                            <h3>Phone Number</h3>
-                                            <p>Emergency Cases <br /><Link href="tel:2085550112">+(208) 555-0112</Link> (24/7)</p>
+                                            <h3>Numéro de téléphone</h3>
+                                            <p>Emergency Cases <br /><Link href="tel:+33757852015">+33 7 57 85 20 15</Link> (24/7)</p>
                                         </div>
                                     </div>
                                 </div>
