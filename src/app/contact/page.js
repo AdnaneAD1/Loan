@@ -71,7 +71,7 @@ export default function Home() {
                                         <div className="inner-box">
                                             <div className="icon-box"><i className="icon-43"></i></div>
                                             <h3>Adresse Email</h3>
-                                            <p><Link href="mailto:contact@metrobnque.xyz">contact@metrobnque.xyz</Link><br /> <Link href="mailto:support@example.com">support@example.com</Link></p>
+                                            <p><Link href="mailto:contact@metrobnque.xyz">contact@metrobnque.xyz</Link><br /></p>
                                         </div>
                                     </div>
                                 </div>
