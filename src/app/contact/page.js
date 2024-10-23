@@ -62,7 +62,7 @@ export default function Home() {
                                         <div className="inner-box">
                                             <div className="icon-box"><i className="icon-2"></i></div>
                                             <h3>Our Location</h3>
-                                            <p>1901 Thornridge Cir. Shiloh, <br />Hawaii 81063</p>
+                                            <p>19 Rue Montorgueil,<br />75001 Paris, France</p>
                                         </div>
                                     </div>
                                 </div>
@@ -90,9 +90,21 @@ export default function Home() {
                     {/* contact-info-section End */}
 
                     {/* Google Map Section */}
-                    <section className="google-map-section pb_120">
+                    {/* <section className="google-map-section pb_120">
                         <div className="auto-container">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55945.16225505631!2d-73.90847969206546!3d40.66490264739892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1601263396347!5m2!1sen!2sbd" height={535} style={{ border: 0, width: "100%" }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+                        </div>
+                    </section> */}
+                    <section className="google-map-section pb_120">
+                        <div className="auto-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.999052183441!2d2.2922926156743064!3d48.85884407928756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fdf43b1bff1%3A0x8c8e4f3bd8a798e1!2sEiffel%20Tower%2C%20Champ%20de%20Mars%2C%205%20Av.%20Anatole%20France%2C%2075015%20Paris%2C%20France!5e0!3m2!1sen!2sfr!4v1601263396347!5m2!1sen!2sfr" 
+                                height={535} 
+                                style={{ border: 0, width: "100%" }} 
+                                allowFullScreen 
+                                loading="lazy" 
+                                referrerPolicy="no-referrer-when-downgrade" 
+                            />
                         </div>
                     </section>
                     {/* Google Map Section End */}
