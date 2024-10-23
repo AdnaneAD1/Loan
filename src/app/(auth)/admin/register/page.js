@@ -15,11 +15,11 @@ const Page = () => {
         redirectIfAuthenticated: '/dashboard',
     })
 
-    // const [name, setName] = useState('')
-    // const [email, setEmail] = useState('')
-    // const [password, setPassword] = useState('')
-    // const [passwordConfirmation, setPasswordConfirmation] = useState('')
-    // const [errors, setErrors] = useState([])
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [passwordConfirmation, setPasswordConfirmation] = useState('')
+    const [errors, setErrors] = useState([])
 
     const submitForm = event => {
         event.preventDefault()
