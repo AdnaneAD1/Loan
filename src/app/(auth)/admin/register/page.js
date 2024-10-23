@@ -133,6 +133,7 @@ import { useAuth } from '@/hooks/auth'
 import { useState, useEffect } from 'react'
 import axios from '@/lib/axios'
 import { useRouter } from 'next/navigation'
+import Loading from '@/app/(app)/Loading'
 
 const Page = () => {
     const router = useRouter()
@@ -146,6 +147,14 @@ const Page = () => {
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
     const [errors, setErrors] = useState([])
+
+    useEffect(() => {
+        if (!isLoading && !user) {
+            router.push('/login');  // Effectuer la redirection après avoir vérifié que l'utilisateur n'est pas chargé
+        } else if (!isLoading && user?.role !== 'Admin') {
+            router.push('/login');
+        }
+    }, [user, isLoading, router]);
 
     useEffect(() => {
         const checkAdmin = async () => {
@@ -171,6 +180,10 @@ const Page = () => {
             password_confirmation: passwordConfirmation,
             setErrors,
         })
+    }
+
+    if (isLoading || !user) {
+        return <Loading />; // Afficher un état de chargement jusqu'à ce que l'utilisateur soit chargé
     }
 
     return (
