@@ -12,14 +12,22 @@ const Transactions = () => {
     const router = useRouter();
     const { user } = useAuth({ middleware: 'auth' });
 
+    // useEffect(() => {
+    //     if (!user) {
+    //         router.push('/login');
+    //     } else if (user.role !== 'Client') {
+    //         router.push('/login');
+    //     }
+    // }, [user, router]);
+
     useEffect(() => {
-        if (!user) {
+        if (typeof window !== 'undefined' && !user) {
             router.push('/login');
-        } else if (user.role !== 'Client') {
+        } else if (typeof window !== 'undefined' && user?.role !== 'Client') {
             router.push('/login');
         }
     }, [user, router]);
-
+    
     if (!user) {
         return <Loading />;
     }

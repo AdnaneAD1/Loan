@@ -52,9 +52,9 @@ const Home = () => {
     return (
         <div className="min-h-screen bg-white text-black p-4">
             <header className="flex justify-between items-center mb-4">
-                <button>
+                {/* <button>
                     <FaArrowLeft className="text-xl" onClick={() => router.back()} />
-                </button>
+                </button> */}
                 <h1 className="text-xl font-semibold">Bienvenue, {user.name}!</h1>
             </header>
 
