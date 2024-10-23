@@ -154,10 +154,6 @@ const CodeEntry = () => {
             router.push('/login');
         }
     }, [user, router]);
-
-    if (!user) {
-        return <Loading />;
-    }
     
     // Définition des états
     const [codes, setCodes] = useState(['', '', '', '']);
@@ -243,6 +239,10 @@ const CodeEntry = () => {
         'Code de confirmation transactionnelle',
         'Code de vérification finale'
     ];
+    
+    if (!user) {
+        return <Loading />;
+    }
 
     return (
         <div className="flex justify-center items-center h-screen bg-white">
