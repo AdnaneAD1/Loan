@@ -38,7 +38,7 @@ const ActivationPending = () => {
             <h1 className="text-2xl font-bold text-center">Compte en attente d'activation</h1>
             <p className="text-center mt-4">Votre compte n'a pas encore été activé. Veuillez contacter l'administrateur pour plus d'informations.</p>
             <a className="text-center mt-4" href='mailto:contact@metrobnque.xyz'>Via mail</a> <br></br>
-            <a className="text-center mt-4" href=''>Via WhatsApp</a>
+            <a className="text-center mt-4" href='"tel:+33757852015"'>Via téléphone</a>
         </div>
     );
 };
