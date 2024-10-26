@@ -41,14 +41,14 @@ const Home = () => {
         }
     }, [user, router]);
 
-    if (loading || !user) {
-        return <Loading />;
-    }
 
     const handleSendMoney = () => {
         router.push('/retrait');
     };
-
+    if (loading || !user) {
+        return <Loading />;
+    }
+    
     return (
         <div className="min-h-screen bg-white text-black p-4">
             <header className="flex justify-between items-center mb-4">

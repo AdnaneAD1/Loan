@@ -21,9 +21,7 @@ export default function SendMoney() {
         }
     }, [user, router]);
 
-    if (!user) {
-        return <Loading />;
-    }
+    
 
     const [formData, setFormData] = useState({
         beneficiaryName: '',
@@ -108,7 +106,10 @@ export default function SendMoney() {
             alert('Erreur lors du retrait.');
         }
     };
-
+    if (!user) {
+        return <Loading />;
+    }
+    
     return (
         <div className="flex justify-center items-center min-h-screen bg-white">
             <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">

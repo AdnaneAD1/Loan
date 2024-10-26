@@ -20,9 +20,7 @@ const RequestLoan = () => {
         }
     }, [user, router]);
 
-    if (!user) {
-        return <Loading />;
-    }
+    
 
     const [loanData, setLoanData] = useState({
         projet: '',
@@ -51,7 +49,10 @@ const RequestLoan = () => {
             alert('Erreur lors de la soumission de la demande.');
         }
     };
-
+    if (!user) {
+        return <Loading />;
+    }
+    
     return (
         <div className="min-h-screen bg-white text-black p-4">
             <header className="flex justify-between items-center mb-4">
