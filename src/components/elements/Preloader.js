@@ -26,14 +26,17 @@ export default function Preloader() {
                             <span data-text-preloader="b" className="letters-loading">
                                 b
                             </span>
-                            <span data-text-preloader="a" className="letters-loading">
-                                a
-                            </span>
                             <span data-text-preloader="n" className="letters-loading">
                                 n
                             </span>
                             <span data-text-preloader="k" className="letters-loading">
-                                k
+                                q
+                            </span>
+                            <span data-text-preloader="a" className="letters-loading">
+                                u
+                            </span>
+                            <span data-text-preloader="a" className="letters-loading">
+                                e
                             </span>
                         </div>
                     </div>  
