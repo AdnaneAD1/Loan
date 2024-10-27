@@ -187,8 +187,8 @@ export default function Footer1() {
                     <div className="auto-container">
                         <div className="copyright">
                             <p>
-                                Copyright 2023 par{' '}
-                                <Link href="/">MertoBank</Link>. Tous droits
+                                Copyright 2024 par{' '}
+                                <Link href="/">MertoBnque</Link>. Tous droits
                                 réservés.
                             </p>
                         </div>
