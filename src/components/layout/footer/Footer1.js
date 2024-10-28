@@ -32,7 +32,7 @@ export default function Footer1() {
                                         </Link>
                                     </figure>
                                     <p>
-                                        Chez MertoBnque, nous mettons la
+                                        Chez MetroBnque, nous mettons la
                                         confiance au centre de nos relations
                                         avec nos clients. Forts de notre
                                         expertise, nous offrons des solutions
@@ -76,7 +76,7 @@ export default function Footer1() {
                                                     À Propos
                                                 </Link>
                                             </li>
-                                            <li>
+                                            {/* <li>
                                                 <Link href="/">
                                                     Témoignages
                                                 </Link>
@@ -93,7 +93,7 @@ export default function Footer1() {
                                             </li>
                                             <li>
                                                 <Link href="/faq">FAQ</Link>
-                                            </li>
+                                            </li> */}
                                         </ul>
                                     </div>
                                 </div>
@@ -188,7 +188,7 @@ export default function Footer1() {
                         <div className="copyright">
                             <p>
                                 Copyright 2024 par{' '}
-                                <Link href="/">MertoBnque</Link>. Tous droits
+                                <Link href="/">MetroBnque</Link>. Tous droits
                                 réservés.
                             </p>
                         </div>
