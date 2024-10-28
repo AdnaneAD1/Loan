@@ -32,7 +32,7 @@ export default function Footer1() {
                                         </Link>
                                     </figure>
                                     <p>
-                                        Chez MertoBank, nous mettons la
+                                        Chez MertoBnque, nous mettons la
                                         confiance au centre de nos relations
                                         avec nos clients. Forts de notre
                                         expertise, nous offrons des solutions
