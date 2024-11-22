@@ -1,7 +1,9 @@
 import Link from "next/link"
+import {useTranslations} from 'next-intl'
 // import { useRouter } from "next/router"
 
 export default function Menu() {
+    const t = useTranslations()
     // const router = useRouter()
 
     return (
@@ -13,7 +15,7 @@ export default function Menu() {
             </ul> */}
 
             <ul className="navigationc clearfix">
-                <li><Link href="/">Accueil</Link>
+                <li><Link href="/">{t('home')}</Link>
                     {/* <ul>
                         <li><Link href="/">Home Page One</Link></li>
                         <li><Link href="/index-2">Home Page Two</Link></li>
@@ -21,9 +23,9 @@ export default function Menu() {
                         <li><Link href="/index-onepage">OnePage Home</Link></li>
                     </ul> */}
                 </li>
-                <li><Link href="/login">Connexion</Link></li>
-                <li><Link href="/register">Inscription</Link></li>
-                <li><Link href="/about">A propos</Link></li>
+                <li><Link href="/login">{t('login')}</Link></li>
+                <li><Link href="/register">{t('register')}</Link></li>
+                <li><Link href="/about">{t('about')}</Link></li>
                 {/* <li className="dropdown"><Link href="/">Services</Link>
                     <ul>
                         <li><Link href="/service">Our Services</Link></li>
@@ -66,7 +68,7 @@ export default function Menu() {
                         <li><Link href="/error">404 Error</Link></li>
                     </ul>
                 </li> */}
-                <li><Link href="/contact">Contact</Link></li>
+                <li><Link href="/contact">{t('contact')}</Link></li>
             </ul>
         </>
     )

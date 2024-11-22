@@ -1,7 +1,9 @@
 import Link from "next/link"
+import {useTranslations} from 'next-intl'
 
 
 export default function Subscribe() {
+    const t = useTranslations()
     return (
         <>
             <section className="subscribe-section">
@@ -10,22 +12,22 @@ export default function Subscribe() {
                     <div className="row align-items-center">
                     <div className="col-lg-6 col-md-12 col-sm-12 text-column">
                         <div className="text-box">
-                        <h2>Abonnez-vous pour Recevoir les Dernières Mises à Jour</h2>
+                        <h2>{t('subscribe_to_get_updates')}</h2>
                         </div>
                     </div>
-                    <div className="col-lg-6 col-md-12 col-sm-12 form-column">
+                    {/* <div className="col-lg-6 col-md-12 col-sm-12 form-column">
                         <div className="form-inner ml_40">
                         <form method="post" action="/contact">
                             <div className="form-group">
-                            <input type="email" name="email" placeholder="Your email" required />
-                            <button type="submit" className="theme-btn btn-two">Abonnez-vous Maintenant</button>
+                            <input type="email" name="email" placeholder={t('your_email')} required />
+                            <button type="submit" className="theme-btn btn-two">{t('subscribe_now')}</button>
                             </div>
                         </form>
                         </div>
-                    </div>
+                    </div> */}
                     </div>
                 </div>
-             </section>          
+             </section>
         </>
     )
 }

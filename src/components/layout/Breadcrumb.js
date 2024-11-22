@@ -1,6 +1,8 @@
 import Link from "next/link"
+import {useTranslations} from 'next-intl'
 
 export default function Breadcrumb({ breadcrumbTitle }) {
+    const t = useTranslations()
     return (
         <>
             <section className="page-title centred">
@@ -13,7 +15,7 @@ export default function Breadcrumb({ breadcrumbTitle }) {
                 <div className="content-box">
                         <h1>{breadcrumbTitle}</h1>
                         <ul className="bread-crumb clearfix">
-                            <li><Link href="/">Acceuil</Link></li>
+                            <li><Link href="/">{t('home')}</Link></li>
                             <li>{breadcrumbTitle}</li>
                         </ul>
                     </div>

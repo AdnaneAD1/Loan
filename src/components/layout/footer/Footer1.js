@@ -1,6 +1,8 @@
 import Link from 'next/link'
+import {useTranslations} from 'next-intl'
 
 export default function Footer1() {
+    const t = useTranslations()
     return (
         <>
             <footer className="main-footer">
@@ -32,18 +34,7 @@ export default function Footer1() {
                                         </Link>
                                     </figure>
                                     <p>
-                                        Chez MetroBnque, nous mettons la
-                                        confiance au centre de nos relations
-                                        avec nos clients. Forts de notre
-                                        expertise, nous offrons des solutions
-                                        financières sûres et adaptées à vos
-                                        besoins, tout en garantissant la
-                                        protection de vos informations grâce à
-                                        des technologies de sécurité avancées.
-                                        Notre engagement est de vous accompagner
-                                        dans la gestion de votre avenir
-                                        financier avec transparence, fiabilité
-                                        et
+                                        {t('pfooter')}
                                     </p>
                                     <ul className="social-links">
                                         <li>
@@ -67,13 +58,13 @@ export default function Footer1() {
                             <div className="col-lg-3 col-md-6 col-sm-12 footer-column">
                                 <div className="footer-widget links-widget ml_40">
                                     <div className="widget-title">
-                                        <h4>Explorer</h4>
+                                        <h4>{t('explore')}</h4>
                                     </div>
                                     <div className="widget-content">
                                         <ul className="links-list clearfix">
                                             <li>
                                                 <Link href="/about">
-                                                    À Propos
+                                                    {t('about')}
                                                 </Link>
                                             </li>
                                             {/* <li>
@@ -101,33 +92,33 @@ export default function Footer1() {
                             <div className="col-lg-3 col-md-6 col-sm-12 footer-column">
                                 <div className="footer-widget links-widget">
                                     <div className="widget-title">
-                                        <h4>Liens Utiles</h4>
+                                        <h4>{t('usefullink')}</h4>
                                     </div>
                                     <div className="widget-content">
                                         <ul className="links-list clearfix">
                                             <li>
                                                 <Link href="/">
-                                                    Carte de Crédit
+                                                    {t('creditCard')}
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link href="/">
-                                                    Compte d'Épargne
+                                                    {t('savingsAccount')}
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link href="/">
-                                                    Cartes Cadeaux Digitales
+                                                    {t('giftCards')}
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link href="/">
-                                                    Demande de Prêt
+                                                    {t('loanRequest')}
                                                 </Link>
                                             </li>
                                             <li>
                                                 <Link href="/">
-                                                    Application Mobile
+                                                    {t('mobileApp')}
                                                 </Link>
                                             </li>
                                         </ul>
@@ -138,8 +129,7 @@ export default function Footer1() {
                                 <div className="footer-widget contact-widget">
                                     <div className="widget-title">
                                         <h4>
-                                            Trouvez Notre Agence & Distributeur
-                                            Automatique
+                                            {t('findBranch')}
                                         </h4>
                                     </div>
                                     <div className="form-inner">
@@ -148,7 +138,7 @@ export default function Footer1() {
                                                 <div className="select-box">
                                                     <select className="wide">
                                                         <option data-display="Agence">
-                                                            Agence
+                                                            {t('agency')}
                                                         </option>
                                                         <option value="1">
                                                             Californie
@@ -173,7 +163,7 @@ export default function Footer1() {
                                                 <button
                                                     type="submit"
                                                     className="theme-btn btn-one">
-                                                    Trouver sur la Carte
+                                                    {t('findOnMap')}
                                                 </button>
                                             </div>
                                         </form>
@@ -188,8 +178,7 @@ export default function Footer1() {
                         <div className="copyright">
                             <p>
                                 Copyright 2024 par{' '}
-                                <Link href="/">MetroBnque</Link>. Tous droits
-                                réservés.
+                                <Link href="/">MetroBnque</Link>. {t('copyright')}
                             </p>
                         </div>
                     </div>

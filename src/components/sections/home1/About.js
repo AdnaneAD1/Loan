@@ -1,6 +1,8 @@
 import Link from 'next/link'
+import {useTranslations} from 'next-intl'
 
 export default function About() {
+    const t = useTranslations()
     return (
         <>
             <section className="about-section pt_120 pb_120">
@@ -40,12 +42,12 @@ export default function About() {
                                                 <i className="icon-9"></i>
                                             </li>
                                         </ul>
-                                        <h6>Banque Évaluée 5 Étoiles</h6>
+                                        <h6>{t('ratingTitle')}</h6>
                                     </div>
                                     <div className="experience-box">
                                         <div className="inner">
-                                            <h2>40</h2>
-                                            <h6>Années d'Expérience</h6>
+                                            <h2>{t('experienceYears')}</h2>
+                                            <h6>{t('experienceSubtitle')}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -55,23 +57,14 @@ export default function About() {
                             <div className="content_block_one">
                                 <div className="content-box ml_40">
                                     <div className="sec-title mb_20">
-                                        <h6>À Propos de Nous</h6>
+                                        <h6>{t('aboutTitle')}</h6>
                                         <h2>
-                                            Conseils Financiers pour Chaque
-                                            Étape de la Vie.
+                                            {t('aboutSubtitle')}
                                         </h2>
                                     </div>
                                     <div className="text-box mb_40">
                                         <p>
-                                            "Nous offrons des conseils
-                                            financiers personnalisés pour vous
-                                            accompagner tout au long de votre
-                                            vie, que vous soyez au début de
-                                            votre carrière, en pleine croissance
-                                            ou en préparation pour la retraite.
-                                            Notre expertise vous aide à
-                                            atteindre vos objectifs financiers
-                                            avec confiance."
+                                            {t('aboutText')}
                                         </p>
                                     </div>
                                     <div className="inner-box mb_45">
@@ -79,31 +72,18 @@ export default function About() {
                                             <div className="icon-box">
                                                 <i className="icon-10"></i>
                                             </div>
-                                            <h3>Orienté Solution</h3>
+                                            <h3>{t('solutionTitle')}</h3>
                                             <p>
-                                                Nous nous concentrons sur des
-                                                solutions pratiques et efficaces
-                                                pour répondre à vos besoins
-                                                financiers. Notre approche est
-                                                axée sur la résolution rapide et
-                                                intelligente des problèmes pour
-                                                garantir votre satisfaction.
+                                                {t('solutionText')}
                                             </p>
                                         </div>
                                         <div className="single-item">
                                             <div className="icon-box">
                                                 <i className="icon-11"></i>
                                             </div>
-                                            <h3>99,99% de Succès</h3>
+                                            <h3>{t('successTitle')}</h3>
                                             <p>
-                                                Nous garantissons un taux de
-                                                succès exceptionnel de 99,99%
-                                                grâce à notre expertise et à
-                                                notre approche rigoureuse.
-                                                Chaque étape de votre parcours
-                                                financier est soigneusement
-                                                gérée pour assurer des résultats
-                                                positifs.
+                                                {t('successText')}
                                             </p>
                                         </div>
                                     </div>
@@ -111,7 +91,7 @@ export default function About() {
                                         <Link
                                             href="/about"
                                             className="theme-btn btn-one">
-                                            Découvrir Plus
+                                            {t('btnDiscoverMore')}
                                         </Link>
                                     </div>
                                 </div>

@@ -1,6 +1,8 @@
 import Link from 'next/link'
+import {useTranslations} from 'next-intl'
 
 export default function Features() {
+    const t = useTranslations()
     return (
         <>
             <section className="feature-section">
@@ -15,15 +17,12 @@ export default function Features() {
                                     <i className="icon-5"></i>
                                 </div>
                                 <h4>
-                                    <Link href="/service">
-                                        Transaction Internationale Sécurisée
+                                    <Link href="/">
+                                        {t('transactionTitle')}
                                     </Link>
                                 </h4>
                                 <p>
-                                    Effectuez des transactions internationales
-                                    en toute confiance, avec des protocoles de
-                                    sécurité avancés garantissant la protection
-                                    de vos fonds à chaque étape.
+                                    {t('transactionDescription')}
                                 </p>
                             </div>
                         </div>
@@ -33,15 +32,12 @@ export default function Features() {
                                     <i className="icon-6"></i>
                                 </div>
                                 <h4>
-                                    <Link href="/service">
-                                        Support 24/7 par une Équipe d'Experts
+                                    <Link href="/">
+                                        {t('supportTitle')}
                                     </Link>
                                 </h4>
                                 <p>
-                                    Notre équipe d'experts est disponible 24
-                                    heures sur 24 et 7 jours sur 7 pour répondre
-                                    à toutes vos questions et résoudre
-                                    rapidement vos préoccupations.
+                                    {t('supportDescription')}
                                 </p>
                             </div>
                         </div>
@@ -51,16 +47,12 @@ export default function Features() {
                                     <i className="icon-7"></i>
                                 </div>
                                 <h4>
-                                    <Link href="/service">
-                                        Frais de Traitement les Plus Bas par
-                                        Rapport aux Autres Banques
+                                    <Link href="/">
+                                        {t('feesTitle')}
                                     </Link>
                                 </h4>
                                 <p>
-                                    Profitez des frais de traitement parmi les
-                                    plus compétitifs du marché, vous permettant
-                                    d'économiser sur chaque transaction
-                                    bancaire.
+                                    {t('feesDescription')}
                                 </p>
                             </div>
                         </div>
@@ -71,15 +63,11 @@ export default function Features() {
                                 </div>
                                 <h4>
                                     <Link href="/service">
-                                        Moins de Temps pour l'Approbation des
-                                        Prêts
+                                        {t('loanApprovalTitle')}
                                     </Link>
                                 </h4>
                                 <p>
-                                    Obtenez l'approbation de vos prêts en un
-                                    temps record, avec un processus simple et
-                                    rapide conçu pour répondre à vos besoins
-                                    financiers urgents.
+                                    {t('loanApprovalDescription')}
                                 </p>
                             </div>
                         </div>

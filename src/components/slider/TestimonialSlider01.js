@@ -1,6 +1,7 @@
 'use client'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import {useTranslations} from 'next-intl'
 
 const swiperOptions = {
     modules: [Autoplay, Pagination, Navigation],
@@ -52,6 +53,7 @@ const swiperOptions = {
     },
 }
 export default function TestimonialSlider1() {
+    const t = useTranslations()
     return (
         <>
             <Swiper {...swiperOptions} className="theme_carousel owl-theme">
@@ -64,8 +66,8 @@ export default function TestimonialSlider1() {
                                     alt=""
                                 />
                             </figure>
-                            <h4>Sandra Bullock</h4>
-                            <span className="designation">Manageur</span>
+                            <h4>{t('testimonial_1_name')}</h4>
+                            <span className="designation">{t('testimonial_1_designation')}</span>
                             <ul className="rating mb_6 clearfix">
                                 <li>
                                     <i className="icon-26"></i>
@@ -84,11 +86,7 @@ export default function TestimonialSlider1() {
                                 </li>
                             </ul>
                             <p>
-                                “Le prêt personnel a été approuvé rapidement, et
-                                le taux d'intérêt était très attractif. L'équipe
-                                a répondu à toutes mes questions et a rendu le
-                                processus très simple. Merci pour ce service
-                                impeccable !”
+                                “{t('testimonial_1_feedback')}”
                             </p>
                         </div>
                     </div>
@@ -102,8 +100,8 @@ export default function TestimonialSlider1() {
                                     alt=""
                                 />
                             </figure>
-                            <h4>Julien Anthor</h4>
-                            <span className="designation">Commercant</span>
+                            <h4>{t('testimonial_2_name')}</h4>
+                            <span className="designation">{t('testimonial_2_designation')}</span>
                             <ul className="rating mb_6 clearfix">
                                 <li>
                                     <i className="icon-26"></i>
@@ -122,11 +120,7 @@ export default function TestimonialSlider1() {
                                 </li>
                             </ul>
                             <p>
-                                Très satisfait de la gestion de mes
-                                investissements. Les conseils financiers fournis
-                                par l'équipe sont toujours avisés et adaptés à
-                                mes besoins. Un service de qualité que je
-                                recommande sans hésiter
+                                “{t('testimonial_2_feedback')}”
                             </p>
                         </div>
                     </div>
@@ -140,8 +134,8 @@ export default function TestimonialSlider1() {
                                     alt=""
                                 />
                             </figure>
-                            <h4>Rolier Demonil</h4>
-                            <span className="designation">Enseignant</span>
+                            <h4>{t('testimonial_3_name')}</h4>
+                            <span className="designation">{t('testimonial_3_designation')}</span>
                             <ul className="rating mb_6 clearfix">
                                 <li>
                                     <i className="icon-26"></i>
@@ -160,11 +154,7 @@ export default function TestimonialSlider1() {
                                 </li>
                             </ul>
                             <p>
-                                “Le service de banque mobile est fantastique. Je
-                                peux gérer mes finances facilement depuis mon
-                                téléphone, et les fonctionnalités sont très
-                                intuitives. C'est un réel plaisir d'utiliser
-                                leur application.”
+                                “{t('testimonial_3_feedback')}”
                             </p>
                         </div>
                     </div>
@@ -178,8 +168,8 @@ export default function TestimonialSlider1() {
                                     alt=""
                                 />
                             </figure>
-                            <h4>Sandra Bullock</h4>
-                            <span className="designation">Assitant Manageur</span>
+                            <h4>{t('testimonial_4_name')}</h4>
+                            <span className="designation">{t('testimonial_4_designation')}</span>
                             <ul className="rating mb_6 clearfix">
                                 <li>
                                     <i className="icon-26"></i>
@@ -198,11 +188,7 @@ export default function TestimonialSlider1() {
                                 </li>
                             </ul>
                             <p>
-                                “Excellente expérience avec le prêt immobilier.
-                                L'équipe a été très professionnelle et m'a guidé
-                                tout au long du processus. Les conditions
-                                étaient très compétitives, et je suis très
-                                satisfait de mon choix.”
+                                “{t('testimonial_4_feedback')}”
                             </p>
                         </div>
                     </div>
@@ -216,8 +202,8 @@ export default function TestimonialSlider1() {
                                     alt=""
                                 />
                             </figure>
-                            <h4>Julien Anthor</h4>
-                            <span className="designation">Manager</span>
+                            <h4>{t('testimonial_5_name')}</h4>
+                            <span className="designation">{t('testimonial_5_designation')}</span>
                             <ul className="rating mb_6 clearfix">
                                 <li>
                                     <i className="icon-26"></i>
@@ -236,12 +222,7 @@ export default function TestimonialSlider1() {
                                 </li>
                             </ul>
                             <p>
-                                “je suis impressionné par la rapidité avec
-                                laquelle ma demande de crédit a été traitée. La
-                                transparence des informations et
-                                l'accompagnement personnalisé ont rendu le
-                                processus très fluide. Je recommande vivement
-                                cette banque.”
+                                “{t('testimonial_5_feedback')}”
                             </p>
                         </div>
                     </div>
@@ -255,8 +236,8 @@ export default function TestimonialSlider1() {
                                     alt=""
                                 />
                             </figure>
-                            <h4>Rolier Demonil</h4>
-                            <span className="designation">Particulier</span>
+                            <h4>{t('testimonial_6_name')}</h4>
+                            <span className="designation">{t('testimonial_6_designation')}</span>
                             <ul className="rating mb_6 clearfix">
                                 <li>
                                     <i className="icon-26"></i>
@@ -275,11 +256,7 @@ export default function TestimonialSlider1() {
                                 </li>
                             </ul>
                             <p>
-                                “j'ai ouvert un compte en ligne avec cette
-                                banque, et tout a été extrêmement facile et
-                                rapide. Le service client est exceptionnel, et
-                                je me sens en sécurité avec leurs options de
-                                sécurité en ligne. Je recommande vivement !.”
+                                “{t('testimonial_6_feedback')}”
                             </p>
                         </div>
                     </div>

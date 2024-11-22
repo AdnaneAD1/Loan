@@ -1,4 +1,4 @@
-// File: C:\Users\sidia\OneDrive\Documents\App\Loan\src\app\(auth)\forgot-password\page.js
+// File: C:\Users\sidia\OneDrive\Documents\App\Loan 2\src\app\(auth)\forgot-password\page.js
 import * as entry from '../../../../../src/app/(auth)/forgot-password/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

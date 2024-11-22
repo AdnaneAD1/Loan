@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import {useTranslations} from 'next-intl'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -27,6 +28,7 @@ const swiperOptions = {
 }
 
 export default function Banner() {
+    const t = useTranslations()
     return (
         <>
             <section className="banner-section p_relative">
@@ -55,21 +57,17 @@ export default function Banner() {
                         <div className="auto-container">
                             <div className="content-box">
                                 <h2>
-                                    Ouvrez votre <span>Compte Courant</span> en
-                                    Ligne
+                                    {t('bannerTitle1')} <span>{t('bannerTitle2')}</span> {t('bannerTitle3')}
                                 </h2>
                                 <p>
-                                    Cette statistique est basée sur notre temps
-                                    moyen d'ouverture de compte courant
-                                    personnel en ligne au cours des 12 derniers
-                                    mois.
+                                    {t('bannerText')}
                                 </p>
 
                                 <div className="btn-box">
                                     <Link
                                         href="/demande"
                                         className="theme-btn btn-one">
-                                        Faire une demande de prêt
+                                        {t('btnLoanRequest')}
                                     </Link>
                                 </div>
                             </div>
@@ -99,20 +97,16 @@ export default function Banner() {
                         <div className="auto-container">
                             <div className="content-box">
                                 <h2>
-                                    Ouvrez votre <span>Compte Courant</span> en
-                                    Ligne
+                                    {t('bannerTitle1')} <span>{t('bannerTitle2')}</span> {t('bannerTitle3')}
                                 </h2>
                                 <p>
-                                    Cette statistique est basée sur notre temps
-                                    moyen d'ouverture de compte courant
-                                    personnel en ligne au cours des 12 derniers
-                                    mois.
+                                    {t('bannerText')}
                                 </p>
                                 <div className="btn-box">
                                     <Link
                                         href="/demande"
                                         className="theme-btn btn-one">
-                                        Faire une demande de prêt
+                                        {t('btnLoanRequest')}
                                     </Link>
                                 </div>
                             </div>
@@ -142,20 +136,16 @@ export default function Banner() {
                         <div className="auto-container">
                             <div className="content-box">
                                 <h2>
-                                    Ouvrez votre <span>Compte Courant</span> en
-                                    Ligne
+                                    {t('bannerTitle1')} <span>{t('bannerTitle2')}</span> {t('bannerTitle3')}
                                 </h2>
                                 <p>
-                                    Cette statistique est basée sur notre temps
-                                    moyen d'ouverture de compte courant
-                                    personnel en ligne au cours des 12 derniers
-                                    mois.
+                                    {t('bannerText')}
                                 </p>
                                 <div className="btn-box">
                                     <Link
                                         href="/demande"
                                         className="theme-btn btn-one">
-                                        Faire une demande de prêt
+                                        {t('btnLoanRequest')}
                                     </Link>
                                 </div>
                             </div>

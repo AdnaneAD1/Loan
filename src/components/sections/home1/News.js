@@ -1,6 +1,8 @@
 'use client'
 import Link from 'next/link'
+import {useTranslations} from 'next-intl'
 export default function News() {
+    const t = useTranslations()
     return (
         <>
             <section className="news-section pt_120 pb_90">
@@ -20,8 +22,8 @@ export default function News() {
                 </div>
                 <div className="auto-container">
                     <div className="sec-title centred mb_70">
-                        <h6>Dernières Nouvelles</h6>
-                        <h2>Nos Dernières Mises à Jour Médias</h2>
+                        <h6>{t('latest_news')}</h6>
+                        <h2>{t('media_updates')}</h2>
                     </div>
                     <div className="row clearfix">
                         <div className="col-lg-4 col-md-6 col-sm-12 news-block">
@@ -42,18 +44,17 @@ export default function News() {
                                         </span>
                                         <h3>
                                             <Link href="">
-                                                Conduite Autonome et Visites
-                                                Guidées de la Grande Ville
+                                                {t('news_1_title')}
                                             </Link>
                                         </h3>
                                         <ul className="post-info mb_25">
                                             <li>
                                                 <i className="icon-28"></i>
                                                 <Link href="">
-                                                    Admin
+                                                    {t('admin')}
                                                 </Link>
                                             </li>
-                                            
+
                                         </ul>
                                         <div className="btn-box">
                                             {/* <Link
@@ -84,18 +85,17 @@ export default function News() {
                                         </span>
                                         <h3>
                                             <Link href="">
-                                                Assistance pour Maisons &
-                                                Propriétés Immobilières
+                                                {t('news_2_title')}
                                             </Link>
                                         </h3>
                                         <ul className="post-info mb_25">
                                             <li>
                                                 <i className="icon-28"></i>
                                                 <Link href="">
-                                                    Admin
+                                                    {t('admin')}
                                                 </Link>
                                             </li>
-                                            
+
                                         </ul>
                                         <div className="btn-box">
                                             {/* <Link
@@ -126,15 +126,14 @@ export default function News() {
                                         </span>
                                         <h3>
                                             <Link href="">
-                                                Vision à Long Terme de la Santé
-                                                et des Installations Attrayantes
+                                                {t('news_3_title')}
                                             </Link>
                                         </h3>
                                         <ul className="post-info mb_25">
                                             <li>
                                                 <i className="icon-28"></i>
                                                 <Link href="">
-                                                    Admin
+                                                    {t('admin')}
                                                 </Link>
                                             </li>
                                             {/* <li>

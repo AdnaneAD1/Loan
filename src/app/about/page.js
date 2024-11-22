@@ -6,7 +6,7 @@ import Link from "next/link"
 import { useState } from 'react'
 import ReactCurvedText from 'react-curved-text'
 import ModalVideo from 'react-modal-video'
-import TestimonialSlider02 from "@/components/slider/TestimonialSlider02"
+import TestimonialSlider01 from "@/components/slider/TestimonialSlider01"
 export default function Home() {
     const [isOpen, setOpen] = useState(false)
     const [isActive, setIsActive] = useState({
@@ -251,7 +251,7 @@ export default function Home() {
                         <div className="col-lg-8 col-md-12 col-sm-12 content-column">
                             <div className="content-box">
                                 {/*Theme Carousel*/}
-                                <TestimonialSlider02 />                        
+                                <TestimonialSlider01 />
                             </div>
                         </div>
                         </div>

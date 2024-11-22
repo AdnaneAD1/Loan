@@ -1,8 +1,11 @@
 import Link from "next/link"
 import Menu from "../Menu"
 import MobileMenu from "../MobileMenu"
+import {useTranslations} from 'next-intl'
+import LanguageSelector from "@/components/LanguageSelector"
 
 export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isSidebar, handlePopup, handleSidebar }) {
+    const t = useTranslations()
     return (
         <>
             <header className={`main-header header-style-one ${scroll ? "fixed-header" : ""}`}>
@@ -44,8 +47,9 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isSide
                             </div>
                         </nav>
                         <div className="menu-right-content ml_70">
-                            <Link href="/login" className="theme-btn btn-two mr_20">Connectez-vous</Link>
-                            <Link href="/register" className="theme-btn btn-one">Ouvrez votre compte</Link>
+                            <LanguageSelector />
+                            <Link href="/login" className="theme-btn btn-two mr_20">{t('loginheader')}</Link>
+                            <Link href="/register" className="theme-btn btn-one">{t('registerheader')}</Link>
                         </div>
                         </div>
                     </div>
@@ -67,8 +71,8 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isSide
                                 </div>
                             </nav>
                             <div className="menu-right-content ml_70">
-                            <Link href="/login" className="theme-btn btn-two mr_20">Connectez-vous</Link>
-                            <Link href="/register" className="theme-btn btn-one">Ouvrez un compte</Link>
+                            <Link href="/login" className="theme-btn btn-two mr_20">{t('loginheader')}</Link>
+                            <Link href="/register" className="theme-btn btn-one">{t('registerheader')}</Link>
                             </div>
                         </div>
                         </div>

@@ -1,9 +1,11 @@
 import CounterUp from "@/components/elements/CounterUp"
+import {useTranslations} from 'next-intl'
 
 
 export default function Funfacts() {
+    const t = useTranslations()
     return (
-        <>        
+        <>
     <section className="funfact-section">
         <div className="auto-container">
             <div className="inner-container clearfix">
@@ -13,7 +15,7 @@ export default function Funfacts() {
                         <div className="count-outer count-box">
                             <CounterUp end={50} /><span>k+</span>
                         </div>
-                        <p>Clients Satisfaits</p>
+                        <p>{t('clients')}</p>
                     </div>
                 </div>
                 <div className="funfact-block-one">
@@ -22,7 +24,7 @@ export default function Funfacts() {
                         <div className="count-outer count-box">
                             <CounterUp end={90} /><span>Md</span>
                         </div>
-                        <p>Total des Transactions</p>
+                        <p>{t('transactions')}</p>
                     </div>
                 </div>
                 <div className="funfact-block-one">
@@ -31,7 +33,7 @@ export default function Funfacts() {
                         <div className="count-outer count-box">
                             <CounterUp end={40} /><span>+</span>
                         </div>
-                        <p>Succursales aux USA</p>
+                        <p>{t('branches')}</p>
                     </div>
                 </div>
             </div>
